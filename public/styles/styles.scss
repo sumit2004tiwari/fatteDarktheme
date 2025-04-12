@@ -116,7 +116,7 @@ main {
       .dashboard {
         @include full-height-width;
         img {
-          width: 85%;
+          width: 80%;
         }
       }
       .element {
@@ -136,7 +136,7 @@ main {
 
 // Responsive
 
-@media (min-width: 460px) {
+@media (min-width: 410px) {
   .hero-section {
     .hero-content {
       max-width: 80%;
@@ -145,7 +145,25 @@ main {
     }
     .bg-img {
       img {
-        aspect-ratio: 1/2;
+        aspect-ratio: 1/1.4;
+      }
+    }
+  }
+}
+@media (min-width: 510px) {
+  .hero-section {
+    .bg-img {
+      img {
+        aspect-ratio: 1/1.2;
+      }
+    }
+  }
+}
+@media (min-width: 610px) {
+  .hero-section {
+    .bg-img {
+      img {
+        aspect-ratio: 1/0.8;
       }
     }
   }
@@ -177,6 +195,11 @@ main {
         }
       }
     }
+    .bg-img {
+      img {
+        aspect-ratio: 1/0.8;
+      }
+    }
   }
 }
 
@@ -194,6 +217,11 @@ main {
   .hero-section {
     .hero-content {
       max-width: calc(100% - 14vw);
+    }
+    .bg-img {
+      img {
+        aspect-ratio: 1/0.7;
+      }
     }
   }
 }

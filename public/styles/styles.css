@@ -135,7 +135,7 @@ main {
   width: 100%;
 }
 .hero-section .hero-content .images .dashboard img {
-  width: 85%;
+  width: 80%;
 }
 .hero-section .hero-content .images .element {
   height: 100%;
@@ -151,14 +151,24 @@ main {
   width: 100%;
 }
 
-@media (min-width: 460px) {
+@media (min-width: 410px) {
   .hero-section .hero-content {
     max-width: 80%;
     margin: 0 auto;
     max-width: calc(100% - 10vw);
   }
   .hero-section .bg-img img {
-    aspect-ratio: 1/2;
+    aspect-ratio: 1/1.4;
+  }
+}
+@media (min-width: 510px) {
+  .hero-section .bg-img img {
+    aspect-ratio: 1/1.2;
+  }
+}
+@media (min-width: 610px) {
+  .hero-section .bg-img img {
+    aspect-ratio: 1/0.8;
   }
 }
 @media (min-width: 768px) {
@@ -184,6 +194,9 @@ main {
     max-width: 50%;
     margin: 0 auto;
   }
+  .hero-section .bg-img img {
+    aspect-ratio: 1/0.8;
+  }
 }
 @media (min-width: 1024px) {
   .max-width {
@@ -196,5 +209,8 @@ main {
   }
   .hero-section .hero-content {
     max-width: calc(100% - 14vw);
+  }
+  .hero-section .bg-img img {
+    aspect-ratio: 1/0.7;
   }
 }/*# sourceMappingURL=styles.css.map */
