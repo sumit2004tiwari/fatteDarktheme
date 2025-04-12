@@ -161,7 +161,7 @@ main {
   margin-top: 10vh;
   text-align: center;
   .service-content {
-    @include flex-column(2.3rem);
+    @include flex-column(4rem);
     .top-container {
       @include flex-column(1rem);
       p {
@@ -181,10 +181,10 @@ main {
       .card-items {
         @include flex-column(3rem);
         .card {
-          @include flex-column(0.8rem);
+          @include flex-column(0.6rem);
           h2 {
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: $text-color;
           }
           p {
