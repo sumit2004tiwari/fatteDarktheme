@@ -152,10 +152,9 @@ main {
 }
 
 @media (min-width: 460px) {
-  .hero-section {
-    max-width: 80%;
-  }
   .hero-section .hero-content {
+    max-width: 80%;
+    margin: 0 auto;
     max-width: calc(100% - 10vw);
   }
   .hero-section .bg-img img {
