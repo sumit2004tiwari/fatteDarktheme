@@ -88,7 +88,6 @@ main {
     }
   }
   .hero-content {
-    max-width: 80%;
     position: absolute;
     top: 4rem;
     left: 50%;
@@ -139,6 +138,7 @@ main {
 
 @media (min-width: 460px) {
   .hero-section {
+    max-width: 80%;
     .hero-content {
       max-width: calc(100% - 10vw);
     }
