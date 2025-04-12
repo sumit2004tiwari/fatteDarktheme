@@ -7,6 +7,8 @@ $padding-tablet: 3rem;
 $padding-desktop: 5rem;
 $heading-color: #666cff;
 $text-color: #3b4056;
+$border-color: #666cff52;
+$low-opacity-text-color: #676b7b;
 
 * {
   margin: 0;
@@ -52,6 +54,16 @@ p {
 }
 h1 {
   font-size: 2.2rem;
+}
+
+.card-icon {
+  img {
+    width: 90px;
+    height: 90px;
+    border: 1px solid $border-color;
+    padding: 1.5rem;
+    border-radius: 50%;
+  }
 }
 
 // Header
@@ -146,19 +158,43 @@ main {
   width: calc(100% - $padding-mobile);
   max-width: calc($container-max-width - $padding-desktop);
   margin: 0 auto;
+  margin-top: 10vh;
   text-align: center;
-  .top-container {
-    @include flex-column(1rem);
-    p {
-      font-weight: 300;
-      font-size: 0.93rem;
+  .service-content {
+    @include flex-column(2.3rem);
+    .top-container {
+      @include flex-column(1rem);
+      p {
+        font-weight: 300;
+        font-size: 0.93rem;
+      }
+      h1 {
+        font-weight: 500;
+        font-size: 1.54rem;
+        color: $text-color;
+        br {
+          display: none;
+        }
+      }
     }
-    h1 {
-      font-weight: 500;
-      font-size: 1.54rem;
-      color: $text-color;
-      br {
-        display: none;
+    .bottom-container {
+      .card-items {
+        @include flex-column(3rem);
+        .card {
+          @include flex-column(0.8rem);
+          h2 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: $text-color;
+          }
+          p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: $low-opacity-text-color;
+            max-width: 70%;
+            margin: 0 auto;
+          }
+        }
       }
     }
   }
@@ -202,6 +238,14 @@ main {
   }
   .service-section {
     margin-top: calc(15vh + 7rem);
+    .service-content {
+      .bottom-container {
+        .card-items {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(10px, 1fr));
+        }
+      }
+    }
   }
 }
 
@@ -239,15 +283,17 @@ main {
   }
   .service-section {
     margin-top: calc(20vh + 7rem);
-    .top-container {
-      h1 {
-        font-size: 2.2rem;
-        br {
-          display: block;
+    .service-content {
+      .top-container {
+        h1 {
+          font-size: 2.2rem;
+          br {
+            display: block;
+          }
         }
-      }
-      p {
-        font-size: 0.95rem;
+        p {
+          font-size: 0.95rem;
+        }
       }
     }
   }
