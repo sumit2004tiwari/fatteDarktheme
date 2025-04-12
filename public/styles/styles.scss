@@ -45,6 +45,15 @@ html {
   }
 }
 
+p {
+  font-size: calc(1rem - 1px);
+  color: $text-color;
+  line-height: 22px;
+}
+h1 {
+  font-size: 2.2rem;
+}
+
 // Header
 header {
   @include flex-row(0rem);
@@ -56,7 +65,7 @@ header {
   height: 4rem;
   margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0px 3px 3px 0px #0000001a;
+  box-shadow: 0px 3px 3px 0px #00000008;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   position: fixed;
@@ -105,9 +114,7 @@ main {
       }
       p {
         font-size: 0.93rem;
-        line-height: 22px;
         font-weight: 300;
-        color: $text-color;
       }
     }
     .images {
@@ -129,6 +136,29 @@ main {
         img {
           @include full-height-width;
         }
+      }
+    }
+  }
+}
+
+// Services Section
+.service-section {
+  width: calc(100% - $padding-mobile);
+  max-width: calc($container-max-width - $padding-desktop);
+  margin: 0 auto;
+  text-align: center;
+  .top-container {
+    @include flex-column(1rem);
+    p {
+      font-weight: 300;
+      font-size: 0.93rem;
+    }
+    h1 {
+      font-weight: 500;
+      font-size: 1.54rem;
+      color: $text-color;
+      br {
+        display: none;
       }
     }
   }
@@ -158,6 +188,9 @@ main {
       }
     }
   }
+  .service-section {
+    margin-top: calc(3vh + 1rem);
+  }
 }
 @media (min-width: 610px) {
   .hero-section {
@@ -167,6 +200,9 @@ main {
       }
     }
   }
+  .service-section {
+    margin-top: calc(15vh + 7rem);
+  }
 }
 
 @media (min-width: 768px) {
@@ -174,16 +210,16 @@ main {
     width: calc(100% - $padding-tablet);
     margin: 0 auto;
   }
-  header {
-    width: calc(100% - $padding-tablet);
+  header,
+  .hero-content,
+  .service-section {
     max-width: calc(100% - 12vw);
   }
   .hero-section {
     .hero-content {
-      max-width: calc(100% - 12vw);
       .text {
         h1 {
-          font-size: 2.4rem;
+          font-size: 2.2rem;
           br {
             display: block;
           }
@@ -201,27 +237,40 @@ main {
       }
     }
   }
+  .service-section {
+    margin-top: calc(20vh + 7rem);
+    .top-container {
+      h1 {
+        font-size: 2.2rem;
+        br {
+          display: block;
+        }
+      }
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
 }
-
-//////////////
 
 @media (min-width: 1024px) {
   .max-width {
     width: calc(100% - $padding-desktop);
     margin: 0 auto;
   }
-  header {
-    width: calc(100% - $padding-desktop);
+  header,
+  .hero-content,
+  .service-section {
     max-width: calc(100% - 14vw);
   }
   .hero-section {
-    .hero-content {
-      max-width: calc(100% - 14vw);
-    }
     .bg-img {
       img {
         aspect-ratio: 1/0.7;
       }
     }
+  }
+  .service-section {
+    margin-top: calc(20vh + 7rem);
   }
 }

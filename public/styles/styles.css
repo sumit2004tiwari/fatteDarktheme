@@ -46,6 +46,16 @@ html {
   background-color: #3036df;
 }
 
+p {
+  font-size: calc(1rem - 1px);
+  color: #3b4056;
+  line-height: 22px;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -58,7 +68,7 @@ header {
   height: 4rem;
   margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.031372549);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   position: fixed;
@@ -121,9 +131,7 @@ main {
 }
 .hero-section .hero-content .text p {
   font-size: 0.93rem;
-  line-height: 22px;
   font-weight: 300;
-  color: #3b4056;
 }
 .hero-section .hero-content .images {
   height: 100%;
@@ -151,6 +159,30 @@ main {
   width: 100%;
 }
 
+.service-section {
+  width: calc(100% - 1.5rem);
+  max-width: calc(1740px - 5rem);
+  margin: 0 auto;
+  text-align: center;
+}
+.service-section .top-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.service-section .top-container p {
+  font-weight: 300;
+  font-size: 0.93rem;
+}
+.service-section .top-container h1 {
+  font-weight: 500;
+  font-size: 1.54rem;
+  color: #3b4056;
+}
+.service-section .top-container h1 br {
+  display: none;
+}
+
 @media (min-width: 410px) {
   .hero-section .hero-content {
     max-width: 80%;
@@ -165,10 +197,16 @@ main {
   .hero-section .bg-img img {
     aspect-ratio: 1/1.2;
   }
+  .service-section {
+    margin-top: calc(3vh + 1rem);
+  }
 }
 @media (min-width: 610px) {
   .hero-section .bg-img img {
     aspect-ratio: 1/0.8;
+  }
+  .service-section {
+    margin-top: calc(15vh + 7rem);
   }
 }
 @media (min-width: 768px) {
@@ -176,15 +214,13 @@ main {
     width: calc(100% - 3rem);
     margin: 0 auto;
   }
-  header {
-    width: calc(100% - 3rem);
-    max-width: calc(100% - 12vw);
-  }
-  .hero-section .hero-content {
+  header,
+  .hero-content,
+  .service-section {
     max-width: calc(100% - 12vw);
   }
   .hero-section .hero-content .text h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
   .hero-section .hero-content .text h1 br {
     display: block;
@@ -197,20 +233,33 @@ main {
   .hero-section .bg-img img {
     aspect-ratio: 1/0.8;
   }
+  .service-section {
+    margin-top: calc(20vh + 7rem);
+  }
+  .service-section .top-container h1 {
+    font-size: 2.2rem;
+  }
+  .service-section .top-container h1 br {
+    display: block;
+  }
+  .service-section .top-container p {
+    font-size: 0.95rem;
+  }
 }
 @media (min-width: 1024px) {
   .max-width {
     width: calc(100% - 5rem);
     margin: 0 auto;
   }
-  header {
-    width: calc(100% - 5rem);
-    max-width: calc(100% - 14vw);
-  }
-  .hero-section .hero-content {
+  header,
+  .hero-content,
+  .service-section {
     max-width: calc(100% - 14vw);
   }
   .hero-section .bg-img img {
     aspect-ratio: 1/0.7;
+  }
+  .service-section {
+    margin-top: calc(20vh + 7rem);
   }
 }/*# sourceMappingURL=styles.css.map */
