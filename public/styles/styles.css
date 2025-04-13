@@ -25,6 +25,7 @@ html {
   width: calc(100% - 1.5rem);
   margin: 0 auto;
   max-width: calc(1740px - 5rem);
+  text-align: center;
 }
 
 .main-body {
@@ -47,6 +48,10 @@ html {
   background-color: #3036df;
 }
 
+.lb {
+  display: none;
+}
+
 p {
   font-size: 0.9rem;
   color: #3b4056;
@@ -58,6 +63,7 @@ h1 {
   font-size: 1.54rem;
   color: #3b4056;
   line-height: 1.3;
+  margin: 0.3rem 0;
 }
 h1 br {
   display: none;
@@ -121,7 +127,6 @@ main > *:not(:first-child):not(:nth-child(2)) {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  text-align: center;
   position: relative;
 }
 .hero-section .bg-img {
@@ -184,7 +189,6 @@ main > *:not(:first-child):not(:nth-child(2)) {
 
 .service-section {
   margin-top: 10vh;
-  text-align: center;
 }
 .service-section .service-content {
   display: flex;
@@ -210,7 +214,6 @@ main > *:not(:first-child):not(:nth-child(2)) {
 
 .create-documents {
   background-color: #f7f7f9;
-  text-align: center;
 }
 .create-documents .documents-content {
   padding: 4rem 0;
@@ -243,16 +246,10 @@ main > *:not(:first-child):not(:nth-child(2)) {
   box-shadow: 4px 4px 2px 0px rgba(211, 211, 211, 0.2509803922);
 }
 
-.management-section {
-  text-align: center;
-}
 .management-section .management-content {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-}
-.management-section .management-content .top-container .line-br br {
-  display: none;
 }
 .management-section .management-content .bottom-container {
   height: 100%;
@@ -290,6 +287,31 @@ main > *:not(:first-child):not(:nth-child(2)) {
      object-position: center;
 }
 
+.advantages-secttion .advantages-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.advantages-secttion .advantages-content .top-container .primary-btn {
+  margin-top: 1.2rem;
+}
+.advantages-secttion .advantages-content .bottom-container .card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.advantages-secttion .advantages-content .bottom-container .card-items .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.advantages-secttion .advantages-content .bottom-container .card-items .card p {
+  color: #676b7b;
+  max-width: 90%;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
 @media (min-width: 410px) {
   .hero-section .hero-content {
     max-width: 80%;
@@ -319,8 +341,24 @@ main > *:not(:first-child):not(:nth-child(2)) {
     display: grid;
     grid-template-columns: repeat(3, minmax(10px, 1fr));
   }
+  .advantages-secttion .advantages-content .bottom-container .card-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .advantages-secttion .advantages-content .bottom-container .card-items .card {
+    flex: 33.33%;
+    height: 268px;
+    width: 256px;
+  }
 }
 @media (min-width: 768px) {
+  .lb {
+    display: block;
+  }
+  main {
+    gap: 5rem;
+  }
   .max-width {
     width: calc(100% - 3rem);
     max-width: calc(100% - 12vw);
@@ -345,9 +383,6 @@ main > *:not(:first-child):not(:nth-child(2)) {
   .service-section {
     margin-top: calc(22vh + 7rem);
   }
-  .management-section .management-content .top-container .line-br br {
-    display: block;
-  }
   .management-section .management-content .bottom-container .card-items {
     display: flex;
     flex-direction: row;
@@ -365,5 +400,8 @@ main > *:not(:first-child):not(:nth-child(2)) {
   }
   .service-section {
     margin-top: calc(20vh + 7rem);
+  }
+  .advantages-secttion .advantages-content .bottom-container .card-items .card {
+    flex: 20%;
   }
 }/*# sourceMappingURL=styles.css.map */
