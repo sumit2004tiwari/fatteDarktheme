@@ -112,7 +112,7 @@ header {
 }
 
 main {
-  @include flex-column(1rem);
+  @include flex-column(2rem);
   > *:not(:first-child):not(:nth-child(2)) {
     margin-top: 3rem;
   }
@@ -279,6 +279,22 @@ main {
   }
 }
 
+// Payment-section
+.payment-info {
+  background-color: $white-gray-bg;
+  padding: 4rem 0;
+  .payment-content {
+    .top-container {
+      .lb {
+        display: none;
+      }
+      .primary-btn {
+        margin-top: 1.2rem;
+      }
+    }
+  }
+}
+
 // Responsive
 
 @media (min-width: 410px) {
@@ -348,9 +364,6 @@ main {
   .lb {
     display: block;
   }
-  main {
-    gap: 5rem;
-  }
   .max-width {
     width: calc(100% - $padding-tablet);
     max-width: calc(100% - 12vw);
@@ -392,6 +405,16 @@ main {
       }
     }
   }
+  .payment-info {
+    .payment-content {
+      .top-container {
+        p {
+          max-width: 65%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1025px) {
@@ -414,8 +437,9 @@ main {
     .advantages-content {
       .bottom-container {
         .card-items {
+          justify-content: space-between;
           .card {
-            flex: calc(100% / 5);
+            flex: 0 0 20%;
           }
         }
       }
