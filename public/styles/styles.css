@@ -154,6 +154,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
 }
 .hero-section .hero-content .text h1 {
   font-weight: 700;
+  color: #666cff;
 }
 .hero-section .hero-content .images {
   height: 100%;

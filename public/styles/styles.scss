@@ -139,6 +139,7 @@ main {
       @include flex-column(1.5rem);
       h1 {
         font-weight: 700;
+        color: $heading-color;
       }
     }
     .images {
