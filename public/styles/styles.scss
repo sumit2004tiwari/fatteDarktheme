@@ -295,6 +295,28 @@ main {
   }
 }
 
+// Static-section
+.static-section {
+  .statics-content {
+    @include flex-column(4rem);
+    .card-items {
+      @include flex-column(3rem);
+      .card {
+        @include flex-column(0.6rem);
+        .card-icon {
+          img {
+            padding: 0.6rem;
+          }
+        }
+        p {
+          color: $low-opacity-text-color;
+          margin: 0 auto;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
 // Responsive
 
 @media (min-width: 410px) {
@@ -355,6 +377,15 @@ main {
             width: 256px;
           }
         }
+      }
+    }
+  }
+  .static-section{
+    .statics-content{
+      .card-items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
       }
     }
   }
@@ -420,7 +451,7 @@ main {
 @media (min-width: 1025px) {
   .max-width {
     width: calc(100% - $padding-desktop);
-    max-width: calc(100% - 14vw);
+    max-width: calc(100% - 16vw);
     margin: 0 auto;
   }
   .hero-section {

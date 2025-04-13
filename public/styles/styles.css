@@ -323,6 +323,30 @@ main > *:not(:first-child):not(:nth-child(2)) {
   margin-top: 1.2rem;
 }
 
+.static-section .statics-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.static-section .statics-content .card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.static-section .statics-content .card-items .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.static-section .statics-content .card-items .card .card-icon img {
+  padding: 0.6rem;
+}
+.static-section .statics-content .card-items .card p {
+  color: #676b7b;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
 @media (min-width: 410px) {
   .hero-section .hero-content {
     max-width: 80%;
@@ -361,6 +385,11 @@ main > *:not(:first-child):not(:nth-child(2)) {
     flex: 33.33%;
     height: 268px;
     width: 256px;
+  }
+  .static-section .statics-content .card-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 @media (min-width: 768px) {
@@ -404,7 +433,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
 @media (min-width: 1025px) {
   .max-width {
     width: calc(100% - 5rem);
-    max-width: calc(100% - 14vw);
+    max-width: calc(100% - 16vw);
     margin: 0 auto;
   }
   .hero-section .bg-img img {
