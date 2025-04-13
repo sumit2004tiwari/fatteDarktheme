@@ -9,6 +9,7 @@ $heading-color: #666cff;
 $text-color: #3b4056;
 $border-color: #666cff52;
 $low-opacity-text-color: #676b7b;
+$white-gray-bg: #f7f7f9;
 
 * {
   margin: 0;
@@ -34,6 +35,7 @@ html {
 .max-width {
   width: calc(100% - $padding-mobile);
   margin: 0 auto;
+  max-width: calc($container-max-width - $padding-desktop);
 }
 
 .main-body {
@@ -62,7 +64,7 @@ h1 {
   }
 }
 h2 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.2rem;
   color: $text-color;
 }
@@ -75,6 +77,10 @@ h2 {
     padding: 1.5rem;
     border-radius: 50%;
   }
+}
+
+.top-container {
+  @include flex-column(1rem);
 }
 
 // Header
@@ -102,7 +108,10 @@ header {
 }
 
 main {
-  @include flex-column(2rem);
+  @include flex-column(1rem);
+  > *:not(:first-child):not(:nth-child(2)) {
+    margin-top: 7rem;
+  }
 }
 
 // Hero Section
@@ -158,16 +167,10 @@ main {
 
 // Services Section
 .service-section {
-  width: calc(100% - $padding-mobile);
-  max-width: calc($container-max-width - $padding-desktop);
-  margin: 0 auto;
   margin-top: 10vh;
   text-align: center;
   .service-content {
     @include flex-column(4rem);
-    .top-container {
-      @include flex-column(1rem);
-    }
     .bottom-container {
       .card-items {
         @include flex-column(3rem);
@@ -185,6 +188,36 @@ main {
   }
 }
 
+// Create Documents
+.create-documents {
+  background-color: $white-gray-bg;
+  text-align: center;
+  .documents-content {
+    padding: 4rem 0;
+    @include flex-column(4rem);
+    .bottom-container {
+      .card-items {
+        @include flex-row(2rem);
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        scroll-padding: 0 50%;
+        .card {
+          flex-shrink: 0;
+          scroll-snap-align: center;
+          @include flex-column(2.5rem);
+          padding: 2rem;
+          width: 275px;
+          height: 295px;
+          background-color: #fff;
+          border-radius: 10px;
+          backdrop-filter: blur(2px);
+          box-shadow: 4px 4px 2px 0px #d3d3d340;
+        }
+      }
+    }
+  }
+}
 // Responsive
 
 @media (min-width: 410px) {
@@ -237,12 +270,8 @@ main {
 @media (min-width: 768px) {
   .max-width {
     width: calc(100% - $padding-tablet);
-    margin: 0 auto;
-  }
-  header,
-  .hero-content,
-  .service-section {
     max-width: calc(100% - 12vw);
+    margin: 0 auto;
   }
   h1 {
     font-size: 2.2rem;
@@ -269,19 +298,15 @@ main {
     }
   }
   .service-section {
-    margin-top: calc(20vh + 7rem);
+    margin-top: calc(22vh + 7rem);
   }
 }
 
 @media (min-width: 1024px) {
   .max-width {
     width: calc(100% - $padding-desktop);
-    margin: 0 auto;
-  }
-  header,
-  .hero-content,
-  .service-section {
     max-width: calc(100% - 14vw);
+    margin: 0 auto;
   }
   .hero-section {
     .bg-img {
