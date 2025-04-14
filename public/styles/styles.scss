@@ -2,7 +2,7 @@
 
 // Variables
 $container-max-width: 1740px;
-$padding-mobile: 1.5rem;
+$padding-mobile: 1.7rem;
 $padding-tablet: 3rem;
 $padding-desktop: 5rem;
 $heading-color: #666cff;
@@ -71,6 +71,10 @@ h2 {
   font-weight: 600;
   font-size: 1.2rem;
   color: $text-color;
+}
+
+.card {
+  --bs-card-border-width: 0px;
 }
 
 .card-icon {
@@ -196,6 +200,7 @@ main {
   background-color: $white-gray-bg;
   .documents-content {
     padding: 4rem 0;
+    text-align: center;
     @include flex-column(4rem);
     .bottom-container {
       .card-items {
@@ -300,7 +305,7 @@ main {
   .statics-content {
     @include flex-column(4rem);
     .card-items {
-      @include flex-column(3rem);
+      @include flex-column(2.5rem);
       .card {
         @include flex-column(0.6rem);
         .card-icon {
@@ -317,6 +322,44 @@ main {
     }
   }
 }
+
+// Faqs-section
+.faqs-section {
+  background-color: $white-gray-bg;
+  padding: 4rem 0;
+  .faqs-content {
+    @include flex-column(4rem);
+    .bottom-container {
+      @include flex-column(2rem);
+      @include full-height-width;
+      .left {
+        @include full-height-width;
+        img {
+          @include full-height-width;
+        }
+      }
+      .right {
+        .accordion-body {
+          text-align: left;
+        }
+        .accordion-header {
+          border-bottom: 1px solid #dee2e6;
+        }
+        .accordion-button {
+          background-color: transparent;
+          color: $text-color;
+          font-size: 15px;
+
+          &:focus {
+            background-color: transparent;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 // Responsive
 
 @media (min-width: 410px) {
@@ -380,12 +423,30 @@ main {
       }
     }
   }
-  .static-section{
-    .statics-content{
-      .card-items{
+  .static-section {
+    .statics-content {
+      .card-items {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+      }
+    }
+  }
+  .faqs-section {
+    .faqs-content {
+      .bottom-container {
+        @include flex-row(2rem);
+        justify-content: space-between;
+        .right,
+        .left {
+          width: 50%;
+        }
+        .left {
+          img {
+            width: 327.45px;
+            height: 346.83px;
+          }
+        }
       }
     }
   }
@@ -449,6 +510,9 @@ main {
 }
 
 @media (min-width: 1025px) {
+  header {
+    width: calc(100% - $padding-desktop);
+  }
   .max-width {
     width: calc(100% - $padding-desktop);
     max-width: calc(100% - 16vw);

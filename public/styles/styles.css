@@ -22,7 +22,7 @@ html {
 }
 
 .max-width {
-  width: calc(100% - 1.5rem);
+  width: calc(100% - 1.7rem);
   margin: 0 auto;
   max-width: calc(1740px - 5rem);
   text-align: center;
@@ -75,6 +75,10 @@ h2 {
   color: #3b4056;
 }
 
+.card {
+  --bs-card-border-width: 0px;
+}
+
 .card-icon img {
   width: 85px;
   height: 85px;
@@ -95,8 +99,8 @@ header {
   gap: 0rem;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
-  width: calc(100% - 1.5rem);
+  padding: 0 1.7rem;
+  width: calc(100% - 1.7rem);
   max-width: calc(1740px - 5rem);
   height: 4rem;
   margin: 0 auto;
@@ -217,6 +221,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
 }
 .create-documents .documents-content {
   padding: 4rem 0;
+  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -331,7 +336,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
 .static-section .statics-content .card-items {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 .static-section .statics-content .card-items .card {
   display: flex;
@@ -345,6 +350,46 @@ main > *:not(:first-child):not(:nth-child(2)) {
   color: #676b7b;
   margin: 0 auto;
   font-weight: 400;
+}
+
+.faqs-section {
+  background-color: #f7f7f9;
+  padding: 4rem 0;
+}
+.faqs-section .faqs-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.faqs-section .faqs-content .bottom-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+.faqs-section .faqs-content .bottom-container .left {
+  height: 100%;
+  width: 100%;
+}
+.faqs-section .faqs-content .bottom-container .left img {
+  height: 100%;
+  width: 100%;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-body {
+  text-align: left;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-header {
+  border-bottom: 1px solid #dee2e6;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-button {
+  background-color: transparent;
+  color: #3b4056;
+  font-size: 15px;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-button:focus {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 @media (min-width: 410px) {
@@ -391,6 +436,20 @@ main > *:not(:first-child):not(:nth-child(2)) {
     flex-direction: row;
     justify-content: space-around;
   }
+  .faqs-section .faqs-content .bottom-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  .faqs-section .faqs-content .bottom-container .right,
+  .faqs-section .faqs-content .bottom-container .left {
+    width: 50%;
+  }
+  .faqs-section .faqs-content .bottom-container .left img {
+    width: 327.45px;
+    height: 346.83px;
+  }
 }
 @media (min-width: 768px) {
   .lb {
@@ -431,6 +490,9 @@ main > *:not(:first-child):not(:nth-child(2)) {
   }
 }
 @media (min-width: 1025px) {
+  header {
+    width: calc(100% - 5rem);
+  }
   .max-width {
     width: calc(100% - 5rem);
     max-width: calc(100% - 16vw);
