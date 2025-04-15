@@ -336,15 +336,13 @@ main {
       .left {
         @include full-height-width;
         img {
-          @include full-height-width;
+          width: 327.45px;
+          height: 346.83px;
         }
       }
       .right {
         .accordion-body {
           text-align: left;
-        }
-        .accordion-header {
-          border-bottom: 1px solid #dee2e6;
         }
         .accordion-button {
           background-color: transparent;
@@ -441,12 +439,6 @@ main {
         .right,
         .left {
           width: 50%;
-        }
-        .left {
-          img {
-            width: 327.45px;
-            height: 346.83px;
-          }
         }
       }
     }

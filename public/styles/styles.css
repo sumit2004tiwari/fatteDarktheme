@@ -374,14 +374,11 @@ main > *:not(:first-child):not(:nth-child(2)) {
   width: 100%;
 }
 .faqs-section .faqs-content .bottom-container .left img {
-  height: 100%;
-  width: 100%;
+  width: 327.45px;
+  height: 346.83px;
 }
 .faqs-section .faqs-content .bottom-container .right .accordion-body {
   text-align: left;
-}
-.faqs-section .faqs-content .bottom-container .right .accordion-header {
-  border-bottom: 1px solid #dee2e6;
 }
 .faqs-section .faqs-content .bottom-container .right .accordion-button {
   background-color: transparent;
@@ -446,10 +443,6 @@ main > *:not(:first-child):not(:nth-child(2)) {
   .faqs-section .faqs-content .bottom-container .right,
   .faqs-section .faqs-content .bottom-container .left {
     width: 50%;
-  }
-  .faqs-section .faqs-content .bottom-container .left img {
-    width: 327.45px;
-    height: 346.83px;
   }
 }
 @media (min-width: 768px) {
