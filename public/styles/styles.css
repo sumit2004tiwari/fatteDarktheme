@@ -56,6 +56,7 @@ p {
   font-size: 0.9rem;
   color: #3b4056;
   line-height: 22px;
+  margin-bottom: 0rem;
 }
 
 h1 {
@@ -80,6 +81,9 @@ h2 {
   --bs-card-border-width: 0px;
 }
 
+.card-icon {
+  margin-bottom: 0.5rem;
+}
 .card-icon img {
   width: 85px;
   height: 85px;
@@ -208,12 +212,11 @@ main > *:not(:first-child):not(:nth-child(2)) {
 .service-section .service-content .bottom-container .card-items .card {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.3rem;
 }
 .service-section .service-content .bottom-container .card-items .card p {
   color: #676b7b;
   max-width: 90%;
-  margin: 0 auto;
   font-weight: 400;
 }
 
@@ -275,7 +278,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
   flex-direction: column;
   gap: 1.5rem;
   height: initial;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   border: 1px solid rgba(102, 108, 255, 0.3215686275);
   border-radius: 10px;
 }
@@ -309,7 +312,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
 .advantages-secttion .advantages-content .bottom-container .card-items .card {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.1rem;
 }
 .advantages-secttion .advantages-content .bottom-container .card-items .card p {
   color: #676b7b;
@@ -342,7 +345,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
 .static-section .statics-content .card-items .card {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
 }
 .static-section .statics-content .card-items .card .card-icon img {
   padding: 0.6rem;

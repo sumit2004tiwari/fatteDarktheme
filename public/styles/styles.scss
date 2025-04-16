@@ -56,6 +56,7 @@ p {
   font-size: 0.9rem;
   color: $text-color;
   line-height: 22px;
+  margin-bottom: 0rem;
 }
 h1 {
   font-weight: 500;
@@ -79,6 +80,7 @@ h2 {
 }
 
 .card-icon {
+  margin-bottom: 0.5rem;
   img {
     width: 85px;
     height: 85px;
@@ -183,11 +185,10 @@ main {
       .card-items {
         @include flex-column(3rem);
         .card {
-          @include flex-column(0.6rem);
+          @include flex-column(0.3rem);
           p {
             color: $low-opacity-text-color;
             max-width: 90%;
-            margin: 0 auto;
             font-weight: 400;
           }
         }
@@ -240,7 +241,7 @@ main {
           @include full-height-width;
           @include flex-column(1.5rem);
           height: initial;
-          padding: 1rem;
+          padding: 1.5rem 1rem;
           border: 1px solid $border-color;
           border-radius: 10px;
           .card-img {
@@ -272,7 +273,7 @@ main {
       .card-items {
         @include flex-column(3rem);
         .card {
-          @include flex-column(0.6rem);
+          @include flex-column(0.1rem);
           p {
             color: $low-opacity-text-color;
             max-width: 90%;
@@ -308,7 +309,7 @@ main {
     .card-items {
       @include flex-column(2.5rem);
       .card {
-        @include flex-column(0.6rem);
+        @include flex-column(0.4rem);
         .card-icon {
           img {
             padding: 0.6rem;
