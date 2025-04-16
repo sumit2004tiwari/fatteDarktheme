@@ -218,6 +218,7 @@ main > *:not(:first-child):not(:nth-child(2)) {
   color: #676b7b;
   max-width: 90%;
   font-weight: 400;
+  margin: 0 auto;
 }
 
 .create-documents {
