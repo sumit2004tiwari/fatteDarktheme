@@ -361,6 +361,45 @@ main {
   }
 }
 
+// .Start-section
+.start-section {
+  @include full-height-width;
+  padding: 4rem 0;
+  background-image: url("../assets/icon_and_background_ninth_section/cta-bg_fatturazione_elettronica.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 0;
+  .start-content {
+    .left {
+      @include flex-column(0.1rem);
+      margin-bottom: 2rem;
+      h1 {
+        color: $heading-color;
+      }
+      p {
+        padding-bottom: 2rem;
+        font-weight: 500;
+        color: $low-opacity-text-color;
+      }
+    }
+    .right {
+      margin-top: auto;
+
+      .db-img {
+        @include full-height-width;
+        img {
+          @include full-height-width;
+          max-width: 690px;
+          object-fit: cover;
+          object-position: center;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
 // Responsive
 
 @media (min-width: 410px) {
@@ -532,6 +571,17 @@ main {
             flex: 0 0 20%;
           }
         }
+      }
+    }
+  }
+  .start-section {
+    .start-content {
+      @include flex-row(1rem);
+      max-height: 506px;
+      justify-content: space-between;
+      align-items: center;
+      .left {
+        text-align: left;
       }
     }
   }

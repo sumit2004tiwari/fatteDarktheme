@@ -394,6 +394,48 @@ main > *:not(:first-child):not(:nth-child(2)) {
   box-shadow: none;
 }
 
+.start-section {
+  height: 100%;
+  width: 100%;
+  padding: 4rem 0;
+  background-image: url("../assets/icon_and_background_ninth_section/cta-bg_fatturazione_elettronica.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 0;
+}
+.start-section .start-content .left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-bottom: 2rem;
+}
+.start-section .start-content .left h1 {
+  color: #666cff;
+}
+.start-section .start-content .left p {
+  padding-bottom: 2rem;
+  font-weight: 500;
+  color: #676b7b;
+}
+.start-section .start-content .right {
+  margin-top: auto;
+}
+.start-section .start-content .right .db-img {
+  height: 100%;
+  width: 100%;
+}
+.start-section .start-content .right .db-img img {
+  height: 100%;
+  width: 100%;
+  max-width: 690px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin: 0 auto;
+}
+
 @media (min-width: 410px) {
   .hero-section .hero-content {
     max-width: 80%;
@@ -507,5 +549,16 @@ main > *:not(:first-child):not(:nth-child(2)) {
   }
   .advantages-secttion .advantages-content .bottom-container .card-items .card {
     flex: 0 0 20%;
+  }
+  .start-section .start-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-height: 506px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .start-section .start-content .left {
+    text-align: left;
   }
 }/*# sourceMappingURL=styles.css.map */
