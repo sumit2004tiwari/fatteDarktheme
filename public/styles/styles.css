@@ -473,11 +473,6 @@ main > :nth-child(9) {
 .contact-section .bottom-container .form-text p {
   color: #fff;
 }
-.contact-section .bottom-container .form-text h1 {
-  font-weight: 500;
-  font-size: 32px;
-  letter-spacing: 2%;
-}
 .contact-section .bottom-container .form-text .bottom-text {
   margin-top: auto;
 }
