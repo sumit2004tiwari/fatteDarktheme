@@ -19,6 +19,7 @@ body {
 html {
   font-size: clamp(16px, 1vw, 20px);
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 .max-width {
@@ -509,13 +510,13 @@ main > :nth-child(9) {
   padding: 0 0.5rem;
   height: 46px;
   border-radius: 8px;
-  border: 1px solid #f7f7f9;
+  border: 1px solid rgba(103, 107, 123, 0.2);
   outline: none;
 }
 .contact-section .bottom-container .form-container form textarea {
   padding: 0.5rem;
   border-radius: 8px;
-  border: 1px solid #f7f7f9;
+  border: 1px solid rgba(103, 107, 123, 0.2);
   width: 100%;
   min-width: initial;
   outline: none;
@@ -544,6 +545,129 @@ main > :nth-child(9) {
 }
 .contact-section .bottom-container .form-container form .submit-btn:hover {
   background-color: #3036df;
+}
+
+footer {
+  background-image: url(../assets/footer/footer_bg_light_and_dark.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: left;
+  padding: 4rem 0;
+}
+footer .footer-content p,
+footer .footer-content h2,
+footer .footer-content h3,
+footer .footer-content a {
+  color: #fff;
+}
+footer .footer-content .logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .footer-content .logo .primary-btn {
+  margin-top: auto;
+}
+footer .footer-content .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+footer .footer-content .nav-links a {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+footer .footer-content .nav-links a:hover {
+  color: #666cff;
+  text-decoration-color: #666cff;
+  transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
+}
+footer .footer-content .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer .footer-content .social-links .subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+footer .footer-content .social-links .subscribe p {
+  font-size: 0.8rem;
+}
+footer .footer-content .social-links .subscribe form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+footer .footer-content .social-links .subscribe form input {
+  padding: 0 0.5rem;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  outline: none;
+  background-color: transparent;
+}
+footer .footer-content .social-links .subscribe form .submit-btn {
+  background-color: #5c61e6;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+footer .footer-content .social-links .subscribe form .submit-btn:hover {
+  background-color: #3036df;
+}
+footer .footer-content .social-links .social-media {
+  padding-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+footer .footer-content .social-links .social-media h3 {
+  font-size: 0.9rem;
+}
+footer .footer-content .social-links .social-media .social-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+footer .footer-content .social-links .social-media .social-icons img {
+  height: 25px;
+  width: 25px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+.copy-right {
+  background-color: #211b2c;
+  text-align: center;
+  padding: 0.8rem 0;
+}
+.copy-right p {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.copy-right p .f-logo-img img {
+  height: 34px;
+  width: 113px;
+  vertical-align: middle;
 }
 
 @media (min-width: 410px) {
@@ -695,13 +819,19 @@ main > :nth-child(9) {
   .contact-section .bottom-container {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
   }
   .contact-section .bottom-container .form-text {
-    flex: 45%;
+    flex: 40%;
     height: initial;
   }
   .contact-section .bottom-container .form-container {
-    flex: 55%;
+    flex: 60%;
+  }
+  footer .footer-content {
+    display: flex;
+    flex-direction: row;
+    gap: 0rem;
+    justify-content: space-between;
   }
 }/*# sourceMappingURL=styles.css.map */
