@@ -35,7 +35,6 @@ html {
 .max-width {
   width: calc(100% - $padding-mobile);
   margin: 0 auto;
-  max-width: calc(100% - $padding-desktop);
   text-align: center;
 }
 .content-width {
