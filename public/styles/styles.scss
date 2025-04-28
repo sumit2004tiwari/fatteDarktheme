@@ -137,10 +137,10 @@ main {
   width: 100%;
   text-align: center;
   .hero-content {
-    @include flex-column(0rem);
+    @include flex-column(1rem);
     .text {
       margin-top: 130px;
-      @include flex-column(1rem);
+      @include flex-column(1.5rem);
       h1 {
         font-weight: 700;
         color: $heading-color;
