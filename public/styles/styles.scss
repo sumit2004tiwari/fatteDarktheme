@@ -75,6 +75,9 @@ h2 {
   color: $text-color;
   margin-bottom: 0rem;
 }
+input {
+  height: 37px;
+}
 
 .card {
   --bs-card-border-width: 0px;
@@ -123,7 +126,7 @@ header {
 }
 
 main {
-  @include flex-column(2rem);
+  @include flex-column(2.5rem);
 }
 
 // Hero Section
@@ -413,15 +416,29 @@ main {
       backdrop-filter: blur(2px);
       box-shadow: 4px 4px 2px 0px #d3d3d340;
       padding: 1.5rem 1rem;
-      height: 350px;
+      height: 400px;
       text-align: left;
       h2,
       h1,
       p {
         color: #fff;
       }
+      .top-text{
+        h2{
+          margin-top: 1.6rem;
+          font-size: 15px;
+        }
+        h1{
+          padding-top: 20px;
+          font-size: 32px;
+          line-height: 44px;
+        }
+      }
       .bottom-text {
         margin-top: auto;
+        p{
+          margin-bottom: 2.2rem;
+        }
       }
     }
 
@@ -434,7 +451,6 @@ main {
       @include flex-column(1rem);
       h2 {
         text-align: left;
-        margin-bottom: 1.4rem;
       }
       form {
         width: 100%;
@@ -447,8 +463,8 @@ main {
         }
 
         input {
-          padding: 0 0.5rem;
-          height: 46px;
+          padding: 0 0.8rem;
+          height: 40px;
           border-radius: 8px;
           border: 1px solid #676b7b33;
           outline: none;
@@ -462,6 +478,7 @@ main {
           min-width: initial;
           outline: none;
           resize: none;
+          height: 199px;
         }
         input,
         textarea {
@@ -474,6 +491,7 @@ main {
         .submit-btn {
           @include primary-button;
           max-width: fit-content;
+          padding: 0 0.9rem;
         }
       }
     }
@@ -488,7 +506,7 @@ footer {
   background-repeat: no-repeat;
   .footer-content {
     .content {
-      @include flex-column(3rem);
+      @include flex-column(2.5rem);
       text-align: left;
       padding: 4rem 0;
       p,
@@ -496,24 +514,36 @@ footer {
       h3,
       a {
         color: #fff;
+        font-size: 15px;
       }
       .logo {
         @include flex-column(1rem);
+        .logo {
+          width: 113px;
+          height: 35px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
         .primary-btn {
           margin-top: auto;
+          font-size: 16px;
         }
       }
       .nav-links {
-        @include flex-column(0.8rem);
+        @include flex-column(1rem);
         a {
-          text-decoration: underline;
-          text-decoration-color: currentColor;
+          text-decoration: none;
           width: fit-content;
+          font-size: 14px;
+          letter-spacing: 0.6px;
           &:hover {
             color: $heading-color;
             text-decoration-color: $heading-color;
-            transition: color 0.2s ease-in-out,
-              text-decoration-color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out;
           }
         }
       }
@@ -522,21 +552,35 @@ footer {
         .subscribe {
           @include flex-column(0.6rem);
           p {
-            font-size: 0.8rem;
+            font-size: 15px;
+            letter-spacing: 2%;
+          }
+          h2 {
+            font-size: 23px;
+            letter-spacing: 2%;
+            font-weight: 500;
           }
           form {
             @include flex-row(1rem);
+            margin-top: 10px;
             flex-wrap: wrap;
             input {
               padding: 0 0.5rem;
-              height: 40px;
               border-radius: 8px;
-              border: 1px solid #fff;
+              border: 1px solid #676b7b33;
               outline: none;
               background-color: transparent;
+              transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
+              color: #fff;
+
+              &:focus {
+                border: 1px solid $heading-color;
+              }
             }
+
             .submit-btn {
               @include primary-button;
+              padding: 0 1.3rem;
             }
           }
         }
@@ -544,13 +588,14 @@ footer {
           padding-top: auto;
           @include flex-column(0.6rem);
           h3 {
-            font-size: 0.9rem;
+            font-size: 15px;
+            letter-spacing: 2%;
           }
           .social-icons {
-            @include flex-row(0.8rem);
+            @include flex-row(0.6rem);
             img {
-              height: 25px;
-              width: 25px;
+              height: 23px;
+              width: 23px;
               aspect-ratio: 1/1;
               cursor: pointer;
             }
@@ -699,7 +744,6 @@ footer {
   .contact-section {
     .bottom-container {
       .form-container {
-        @include flex-column(2rem);
 
         .top-container {
           flex: 35%;
@@ -725,10 +769,9 @@ footer {
 @media (min-width: 1025px) {
   .max-width {
     width: calc(100% - $padding-desktop);
-    max-width: calc(100% - 16vw);
     margin: 0 auto;
   }
- 
+
   .advantages-secttion {
     .advantages-content {
       .bottom-container {
