@@ -154,7 +154,6 @@ main {
         @include full-height-width;
         img {
           width: 80%;
-          aspect-ratio: 1/0.8
         }
       }
       .element {
@@ -645,8 +644,8 @@ footer {
   .lb {
     display: block;
   }
-  header{
-    nav{
+  header {
+    nav {
       display: block;
     }
   }
@@ -730,6 +729,7 @@ footer {
     max-width: calc(100% - 16vw);
     margin: 0 auto;
   }
+ 
   .advantages-secttion {
     .advantages-content {
       .bottom-container {

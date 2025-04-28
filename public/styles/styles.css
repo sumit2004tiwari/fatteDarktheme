@@ -174,7 +174,6 @@ main {
 }
 .hero-section .hero-content .images .dashboard img {
   width: 80%;
-  aspect-ratio: 1/0.8;
 }
 .hero-section .hero-content .images .element {
   height: 100%;
