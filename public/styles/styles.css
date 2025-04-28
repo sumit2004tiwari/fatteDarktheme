@@ -516,7 +516,7 @@ main {
   outline: none;
 }
 .contact-section .bottom-container .form-container form textarea {
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 8px;
   border: 1px solid rgba(103, 107, 123, 0.2);
   width: 100%;
