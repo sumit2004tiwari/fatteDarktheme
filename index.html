@@ -11,7 +11,11 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-
+    <link
+      rel="shortcut icon"
+      href="/assets/Logo + favicon/favicon-fatte.svg"
+      type="image/x-icon"
+    />
     <!-- styles -->
     <link rel="stylesheet" href="./src/styles/styles.css" />
     <title>FATTE</title>
@@ -20,7 +24,9 @@
     <div class="main-body">
       <!-- Header Start -->
       <header>
-        <div class="logo">Fatte</div>
+        <div class="logo">
+          <img src="/assets/Logo + favicon/logo-fatte.svg" alt="logo" />
+        </div>
         <nav>
           <div class="primary-btn">
             <button>USA GRATIS FATTE</button>
@@ -245,7 +251,7 @@
               <h1>Un gestionale che <b>non ti abbandona mai</b></h1>
               <p>
                 Gestisci fatture, preventivi, ordini e spese ovunque tu sia, da
-                <b>qualsiasi dispositivo.</b> <br class="lb" />
+                <b>qualsiasi dispositivo.</b> <br class="line-break" />
                 Tutti i <b>dati</b> sono <b>sincronizzati</b> in un’unica
                 piattaforma, semplice e veloce da usare.
               </p>
@@ -316,7 +322,7 @@
               <p>
                 Archivia digitalmente le tue fatture in modo sicuro e a norma di
                 legge. Le funzionalità di gestione clienti,
-                <br class="lb" />
+                <br class="line-break" />
                 catalogo prodotti e analisi sono completamente gratuite: paghi
                 solo quando emetti una fattura.
               </p>
@@ -392,7 +398,7 @@
               <p>
                 Nessun abbonamento: sei libero di generare preventivi, creare
                 prodotti e servizi, aggiungere clienti e fornitori, importare ed
-                esportare <br class="lb" />
+                esportare <br class="line-break" />
                 documenti senza pagare nulla. PAGHI SOLO L’INVIO DELLE TUE
                 FATTURE ALLO SDI!
               </p>
@@ -647,7 +653,7 @@
         <section class="start-section">
           <div class="start-content max-width">
             <div class="left content-width">
-              <h1><b>Pronot per iniziare?</b></h1>
+              <h1><b>Pronto per iniziare?</b></h1>
               <p>Inizia subito a gestire GRATIS la tua attività!</p>
               <div class="primary-btn">
                 <button>USA GRATIS FATTE</button>
@@ -688,55 +694,6 @@
               <!-- Form -->
               <div class="form-container">
                 <h2>Condividi le tue idee</h2>
-                <form action="">
-                  <div class="top-input">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Name"
-                      required
-                    />
-                    <input
-                      type="text"
-                      name="cognome"
-                      id="cognome"
-                      placeholder="Cognome"
-                      required
-                    />
-                  </div>
-                  <div class="bottom-input">
-                    <input
-                      type="tel"
-                      name="tel"
-                      id="tel"
-                      placeholder="Cellulare"
-                      required
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="E-mail"
-                      required
-                    />
-                  </div>
-                  <div class="msg-btn">
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows="10"
-                      cols="50"
-                      required
-                      placeholder="Messaggio"
-                    ></textarea>
-                    <input
-                      type="submit"
-                      value="INVIA RICHIESTA"
-                      class="submit-btn"
-                    />
-                  </div>
-                </form>
               </div>
             </div>
           </div>
@@ -748,12 +705,9 @@
       <footer>
         <div class="footer-content max-width">
           <div class="content content-width">
-            <div class="logo">
+            <div class="cta">
               <div class="logo">
-                <img
-                  src="/assets/footer/logo_gecsoftware/logo_gec_software_fatte_fatturazione_elettronica.png"
-                  alt="logo"
-                />
+                <img src="/assets/Logo + favicon/logo-fatte.svg" alt="logo" />
               </div>
               <p>L'app perfetta per la gestione delle tue fatture</p>
               <div class="primary-btn">
@@ -773,14 +727,18 @@
                 <p><b>Entra a far parte della nostra community</b></p>
                 <h2>Iscriviti alla newsletter</h2>
                 <form action="">
-                  <input
-                    type="email"
-                    name="email"
-                    id="subs-email"
-                    required
-                    placeholder="E-mail"
-                  />
-                  <input type="submit" value="ISCRIVITI" class="submit-btn" />
+                  <div class="input-container">
+                    <input
+                      type="email"
+                      name="email"
+                      id="subs-email"
+                      required
+                      autocomplete="off"
+                      placeholder="Enter your email"
+                    />
+                    <label for="subs-email">E-mail</label>
+                  </div>
+                  <button type="submit" class="submit-btn">ISCRIVITI</button>
                 </form>
               </div>
               <div class="social-media">

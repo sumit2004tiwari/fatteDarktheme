@@ -41,18 +41,25 @@ html {
   max-width: 1440px;
   margin: 0 auto;
 }
-
 .main-body {
   margin: 0 auto;
 }
-
 .primary-btn {
   button {
     @include primary-button;
   }
 }
-.lb {
+.line-break {
   display: none;
+}
+.logo {
+  width: 100px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 p {
   font-size: 15px;
@@ -76,9 +83,33 @@ h2 {
   margin-bottom: 0rem;
 }
 input {
-  height: 37px;
+  padding: 0 0.8rem;
+  height: 41px;
+  border-radius: 8px;
+  border: 1px solid #676b7b33;
+  outline: none;
 }
+textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #676b7b33;
+  width: 100%;
+  min-width: initial;
+  outline: none;
+  resize: none;
+  height: 199px;
+}
+input,
+textarea {
+  transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
 
+  &:focus {
+    border: 1px solid $border-color;
+  }
+}
+input::placeholder {
+  opacity: 0;
+}
 .card {
   --bs-card-border-width: 0px;
 }
@@ -117,9 +148,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  .logo {
-    font-size: 1.4rem;
-  }
+
   nav {
     display: none;
   }
@@ -132,7 +161,7 @@ main {
 // Hero Section
 .hero-section {
   @include flex-column(2rem);
-  background-image: url(../assets/hero\ light_first_section/hero-bg-light-1.svg);
+  background-image: url(../../assets/hero\ light_first_section/hero-bg-light-1.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -289,7 +318,7 @@ main {
   padding: 4rem 0;
   .payment-content {
     .top-container {
-      .lb {
+      .line-break {
         display: none;
       }
       .primary-btn {
@@ -326,7 +355,7 @@ main {
 .faqs-section {
   background-color: $white-gray-bg;
   padding: 4rem 0;
-  margin-bottom: -2rem;
+  margin-bottom: -2.5rem;
   .faqs-content {
     @include flex-column(4rem);
     .bottom-container {
@@ -362,12 +391,12 @@ main {
 .start-section {
   @include full-height-width;
   padding: 4rem 0;
-  background-image: url("../assets/icon_and_background_ninth_section/cta-bg_fatturazione_elettronica.png");
+  background-image: url(../../assets/icon_and_background_ninth_section/cta-bg_fatturazione_elettronica.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 0;
-  margin-bottom: -2rem;
+  margin-bottom: -2.5rem;
   .start-content {
     .left {
       @include flex-column(0.1rem);
@@ -423,12 +452,12 @@ main {
       p {
         color: #fff;
       }
-      .top-text{
-        h2{
+      .top-text {
+        h2 {
           margin-top: 1.6rem;
           font-size: 15px;
         }
-        h1{
+        h1 {
           padding-top: 20px;
           font-size: 32px;
           line-height: 44px;
@@ -436,7 +465,7 @@ main {
       }
       .bottom-text {
         margin-top: auto;
-        p{
+        p {
           margin-bottom: 2.2rem;
         }
       }
@@ -452,55 +481,13 @@ main {
       h2 {
         text-align: left;
       }
-      form {
-        width: 100%;
-        margin: 0 auto;
-        @include flex-column(1.4rem);
-        .top-input,
-        .bottom-input,
-        .msg-btn {
-          @include flex-column(1.4rem);
-        }
-
-        input {
-          padding: 0 0.8rem;
-          height: 40px;
-          border-radius: 8px;
-          border: 1px solid #676b7b33;
-          outline: none;
-        }
-
-        textarea {
-          padding: 0.8rem;
-          border-radius: 8px;
-          border: 1px solid #676b7b33;
-          width: 100%;
-          min-width: initial;
-          outline: none;
-          resize: none;
-          height: 199px;
-        }
-        input,
-        textarea {
-          transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
-
-          &:focus {
-            border: 1px solid $border-color;
-          }
-        }
-        .submit-btn {
-          @include primary-button;
-          max-width: fit-content;
-          padding: 0 0.9rem;
-        }
-      }
     }
   }
 }
 
 // Footer
 footer {
-  background-image: url(../assets/footer/footer_bg_light_and_dark.png);
+  background-image: url(../../assets/footer/footer_bg_light_and_dark.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -514,23 +501,12 @@ footer {
       h3,
       a {
         color: #fff;
-        font-size: 15px;
+        font-size: 16px;
       }
-      .logo {
-        @include flex-column(1rem);
-        .logo {
-          width: 113px;
-          height: 35px;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-          }
-        }
+      .cta {
+        @include flex-column(2rem);
         .primary-btn {
           margin-top: auto;
-          font-size: 16px;
         }
       }
       .nav-links {
@@ -538,8 +514,6 @@ footer {
         a {
           text-decoration: none;
           width: fit-content;
-          font-size: 14px;
-          letter-spacing: 0.6px;
           &:hover {
             color: $heading-color;
             text-decoration-color: $heading-color;
@@ -553,34 +527,47 @@ footer {
           @include flex-column(0.6rem);
           p {
             font-size: 15px;
-            letter-spacing: 2%;
           }
           h2 {
             font-size: 23px;
-            letter-spacing: 2%;
-            font-weight: 500;
           }
           form {
             @include flex-row(1rem);
             margin-top: 10px;
             flex-wrap: wrap;
-            input {
-              padding: 0 0.5rem;
-              border-radius: 8px;
-              border: 1px solid #676b7b33;
-              outline: none;
-              background-color: transparent;
-              transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
-              color: #fff;
+            .input-container {
+              position: relative;
+              input {
+                background-color: transparent;
+                transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
+                color: #ffffff87;
 
-              &:focus {
-                border: 1px solid $heading-color;
+                &:focus {
+                  border: 1px solid $heading-color;
+                  background-color: transparent;
+                }
+              }
+              label {
+                position: absolute;
+                left: 0.8rem;
+                transform: translateY(40%);
+                color: $text-color;
+                pointer-events: none;
+                transition: all 0.3s ease;
+                background-color: transparent;
+              }
+              input:focus + label,
+              input:not(:placeholder-shown) + label {
+                transform: translateY(calc(-50%)) scale(0.95);
+                background-color: #241d31;
+                color: $heading-color;
+                padding: 0 8px;
               }
             }
 
             .submit-btn {
               @include primary-button;
-              padding: 0 1.3rem;
+              padding: 0.6rem 1.1rem;
             }
           }
         }
@@ -685,7 +672,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .lb {
+  .line-break {
     display: block;
   }
   header {
@@ -744,7 +731,6 @@ footer {
   .contact-section {
     .bottom-container {
       .form-container {
-
         .top-container {
           flex: 35%;
         }
