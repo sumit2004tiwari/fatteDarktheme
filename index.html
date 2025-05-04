@@ -18,6 +18,7 @@
     />
     <!-- styles -->
     <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link rel="stylesheet" href="./src/styles/inputStyles/inputStyles.css" />
     <title>FATTE</title>
   </head>
   <body>
@@ -651,15 +652,15 @@
         </section>
         <!-- Section 9 -->
         <section class="start-section">
-          <div class="start-content max-width">
-            <div class="left content-width">
+          <div class="start-content max-width ">
+            <div class="left">
               <h1><b>Pronto per iniziare?</b></h1>
               <p>Inizia subito a gestire GRATIS la tua attività!</p>
               <div class="primary-btn">
                 <button>USA GRATIS FATTE</button>
               </div>
             </div>
-            <div class="right content-width">
+            <div class="right">
               <div class="db-img">
                 <img
                   src="/assets/icon_and_background_ninth_section/cta-dashboard_fatturazione_elettronica.png"
@@ -694,6 +695,64 @@
               <!-- Form -->
               <div class="form-container">
                 <h2>Condividi le tue idee</h2>
+                <form action="">
+                  <div class="top-input">
+                    <div class="input-container">
+                      <input
+                        type="text"
+                        id="nome"
+                        required
+                        autocomplete="off"
+                        placeholder="Nome"
+                      />
+                      <label for="nome">Nome</label>
+                    </div>
+                    <div class="input-container">
+                      <input
+                        type="text"
+                        id="Cognome"
+                        required
+                        autocomplete="off"
+                        placeholder="Cognome"
+                      />
+                      <label for="Cognome">Cognome</label>
+                    </div>
+                  </div>
+                  <div class="middle-input">
+                    <div class="input-container">
+                      <input
+                        type="tel"
+                        id="cellulare"
+                        required
+                        autocomplete="off"
+                        placeholder="Cellulare"
+                      />
+                      <label for="cellulare">Cellulare</label>
+                    </div>
+                    <div class="input-container">
+                      <input
+                        type="email"
+                        id="email"
+                        required
+                        autocomplete="off"
+                        placeholder="email"
+                      />
+                      <label for="email">E-mail</label>
+                    </div>
+                  </div>
+                  <div class="bottom-input">
+                    <div class="input-container is-textarea">
+                      <textarea
+                        name="messaggio"
+                        id="messaggio"
+                        required
+                        placeholder="messaggio"
+                      ></textarea>
+                      <label for="messaggio">Messaggio</label>
+                    </div>
+                    <button type="submit" class="submit-btn">INVIA RICHIESTA</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -705,7 +764,7 @@
       <footer>
         <div class="footer-content max-width">
           <div class="content content-width">
-            <div class="cta">
+            <div class="call-to-action">
               <div class="logo">
                 <img src="/assets/Logo + favicon/logo-fatte.svg" alt="logo" />
               </div>
@@ -715,7 +774,7 @@
               </div>
             </div>
             <div class="nav-links">
-              <a href="#features">Features</a>
+              <a href="#features" class="active">Features</a>
               <a href="#documenti">Documenti</a>
               <a href="#ovunque-ti-trove">Ovunque ti trovi</a>
               <a href="#vantaggi">Vantaggi</a>
@@ -730,13 +789,12 @@
                   <div class="input-container">
                     <input
                       type="email"
-                      name="email"
-                      id="subs-email"
+                      id="e-mail"
                       required
                       autocomplete="off"
-                      placeholder="Enter your email"
+                      placeholder="E-mail"
                     />
-                    <label for="subs-email">E-mail</label>
+                    <label for="e-mail">E-mail</label>
                   </div>
                   <button type="submit" class="submit-btn">ISCRIVITI</button>
                 </form>

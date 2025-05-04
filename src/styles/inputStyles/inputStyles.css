@@ -1,0 +1,108 @@
+form input::-moz-placeholder, form textarea::-moz-placeholder {
+  opacity: 0;
+}
+form input::placeholder,
+form textarea::placeholder {
+  opacity: 0;
+}
+form .input-container {
+  position: relative;
+}
+form .input-container input,
+form .input-container textarea {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid rgba(103, 107, 123, 0.2);
+  border-radius: 8px;
+  padding: 0px 12px;
+  width: 100%;
+  color: #3b4056;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out, padding-top 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+form .input-container input {
+  height: 40px;
+}
+form .input-container textarea {
+  resize: none;
+  height: 199px;
+  line-height: 1.5;
+  padding-top: 12px;
+}
+form .input-container input:focus,
+form .input-container textarea:focus {
+  border-color: #666cff;
+}
+form .input-container label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: rgba(103, 107, 123, 0.2);
+  transition: all 0.3s ease;
+  background-color: transparent;
+  pointer-events: none;
+  padding: 0.01rem 0.25rem;
+  z-index: 1;
+}
+form .input-container.is-textarea label {
+  top: 12px;
+  transform: none;
+}
+form .input-container input:not(:-moz-placeholder-shown) + label, form .input-container textarea:not(:-moz-placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #666cff;
+  font-size: 13px;
+  transform: none;
+  border-radius: 4px;
+}
+form .input-container input:focus + label,
+form .input-container input:not(:placeholder-shown) + label,
+form .input-container textarea:focus + label,
+form .input-container textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #666cff;
+  font-size: 13px;
+  transform: none;
+  border-radius: 4px;
+}
+form .submit-btn {
+  background-color: #5c61e6;
+  color: #fff;
+  padding: 0rem 1rem;
+  border: none;
+  line-height: 40px;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+form .submit-btn:hover {
+  background-color: #3036df;
+}
+
+footer .footer-content .social-links .subscribe form .input-container input {
+  border: 1px solid #f7f7f9;
+  color: #fff;
+}
+footer .footer-content .social-links .subscribe form .input-container label {
+  color: #f7f7f9;
+}
+footer .footer-content .social-links .subscribe form .input-container input:not(:-moz-placeholder-shown) + label {
+  background-color: #2a2238;
+  color: #fff;
+}
+footer .footer-content .social-links .subscribe form .input-container input:focus + label,
+footer .footer-content .social-links .subscribe form .input-container input:not(:placeholder-shown) + label {
+  background-color: #2a2238;
+  color: #fff;
+}/*# sourceMappingURL=inputStyles.css.map */

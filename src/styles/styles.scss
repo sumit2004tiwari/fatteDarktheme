@@ -1,14 +1,5 @@
 @import "mixins";
-
-// Variables
-$padding-mobile: 1.7rem;
-$padding-tablet: 3rem;
-$padding-desktop: 5rem;
-$heading-color: #666cff;
-$text-color: #3b4056;
-$border-color: #666cff52;
-$low-opacity-text-color: #676b7b;
-$white-gray-bg: #f7f7f9;
+@import "variables";
 
 * {
   margin: 0;
@@ -62,58 +53,29 @@ html {
   }
 }
 p {
-  font-size: 15px;
+  font-size: $font-size-base;
   color: $text-color;
   line-height: 22px;
   margin-bottom: 0rem;
 }
 h1 {
   font-weight: 500;
-  font-size: 1.54rem;
+  font-size: 24px;
   color: $text-color;
-  line-height: 42px;
+  line-height: 37px;
   br {
     display: none;
   }
 }
 h2 {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: $font-size-small-heading;
   color: $text-color;
   margin-bottom: 0rem;
-}
-input {
-  padding: 0 0.8rem;
-  height: 41px;
-  border-radius: 8px;
-  border: 1px solid #676b7b33;
-  outline: none;
-}
-textarea {
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #676b7b33;
-  width: 100%;
-  min-width: initial;
-  outline: none;
-  resize: none;
-  height: 199px;
-}
-input,
-textarea {
-  transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
-
-  &:focus {
-    border: 1px solid $border-color;
-  }
-}
-input::placeholder {
-  opacity: 0;
 }
 .card {
   --bs-card-border-width: 0px;
 }
-
 .card-icon {
   margin-bottom: 0.5rem;
   img {
@@ -124,7 +86,6 @@ input::placeholder {
     border-radius: 50%;
   }
 }
-
 .top-container {
   @include flex-column(1rem);
 }
@@ -170,6 +131,7 @@ main {
   text-align: center;
   .hero-content {
     @include flex-column(1rem);
+    max-width: 1440px;
     .text {
       margin-top: 130px;
       @include flex-column(1.5rem);
@@ -177,14 +139,19 @@ main {
         font-weight: 700;
         color: $heading-color;
       }
+      p {
+        font-size: $font-size-label;
+      }
     }
     .images {
       @include full-height-width;
       position: relative;
+      margin: 0 auto;
       .dashboard {
         @include full-height-width;
         img {
           width: 80%;
+          object-fit: cover;
         }
       }
       .element {
@@ -371,11 +338,15 @@ main {
       .right {
         .accordion-body {
           text-align: left;
+          border: 1;
+        }
+        .accordion-item {
+          border: 0.1px solid $input-border-color;
         }
         .accordion-button {
           background-color: transparent;
           color: $text-color;
-          font-size: 15px;
+          font-size: $font-size-label;
 
           &:focus {
             background-color: transparent;
@@ -398,6 +369,8 @@ main {
   padding-bottom: 0;
   margin-bottom: -2.5rem;
   .start-content {
+    max-width: 1440px;
+    margin: 0 auto;
     .left {
       @include flex-column(0.1rem);
       margin-bottom: 2rem;
@@ -455,7 +428,7 @@ main {
       .top-text {
         h2 {
           margin-top: 1.6rem;
-          font-size: 15px;
+          font-size: $font-size-label;
         }
         h1 {
           padding-top: 20px;
@@ -481,6 +454,14 @@ main {
       h2 {
         text-align: left;
       }
+      form {
+        @include flex-column(1.3rem);
+        .top-input,
+        .middle-input,
+        .bottom-input {
+          @include flex-column(1.3rem);
+        }
+      }
     }
   }
 }
@@ -501,9 +482,9 @@ footer {
       h3,
       a {
         color: #fff;
-        font-size: 16px;
+        font-size: $font-size-base;
       }
-      .cta {
+      .call-to-action {
         @include flex-column(2rem);
         .primary-btn {
           margin-top: auto;
@@ -517,7 +498,11 @@ footer {
           &:hover {
             color: $heading-color;
             text-decoration-color: $heading-color;
-            transition: color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out text-decoration-color 0.2s
+              ease-in-out;
+          }
+          &:active {
+            color: $heading-color;
           }
         }
       }
@@ -526,56 +511,21 @@ footer {
         .subscribe {
           @include flex-column(0.6rem);
           p {
-            font-size: 15px;
+            font-size: $font-size-label;
           }
           h2 {
-            font-size: 23px;
+            font-size: $font-size-small-heading;
           }
           form {
             @include flex-row(1rem);
-            margin-top: 10px;
-            flex-wrap: wrap;
-            .input-container {
-              position: relative;
-              input {
-                background-color: transparent;
-                transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
-                color: #ffffff87;
-
-                &:focus {
-                  border: 1px solid $heading-color;
-                  background-color: transparent;
-                }
-              }
-              label {
-                position: absolute;
-                left: 0.8rem;
-                transform: translateY(40%);
-                color: $text-color;
-                pointer-events: none;
-                transition: all 0.3s ease;
-                background-color: transparent;
-              }
-              input:focus + label,
-              input:not(:placeholder-shown) + label {
-                transform: translateY(calc(-50%)) scale(0.95);
-                background-color: #241d31;
-                color: $heading-color;
-                padding: 0 8px;
-              }
-            }
-
-            .submit-btn {
-              @include primary-button;
-              padding: 0.6rem 1.1rem;
-            }
+            margin-top: 15px;
           }
         }
         .social-media {
           padding-top: auto;
           @include flex-column(0.6rem);
           h3 {
-            font-size: 15px;
+            font-size: $font-size-label;
             letter-spacing: 2%;
           }
           .social-icons {
@@ -692,7 +642,7 @@ footer {
     }
   }
   p {
-    font-size: 0.93rem;
+    font-size: $font-size-base;
   }
   .hero-section {
     .hero-content {
@@ -742,9 +692,6 @@ footer {
           grid-template-columns: 1fr 1fr;
           > div:nth-child(3) {
             grid-column: 1 / 3;
-          }
-          input {
-            max-width: 354px;
           }
         }
       }
@@ -798,6 +745,19 @@ footer {
       .content {
         @include flex-row(0rem);
         justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media (min-width: 1439px) {
+  .hero-section {
+    .hero-content {
+      .images {
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
     }
   }

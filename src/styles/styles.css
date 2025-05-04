@@ -40,7 +40,7 @@ html {
 .primary-btn button {
   background-color: #5c61e6;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.3rem;
   border: none;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -69,7 +69,7 @@ html {
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
   color: #3b4056;
   line-height: 22px;
   margin-bottom: 0rem;
@@ -77,9 +77,9 @@ p {
 
 h1 {
   font-weight: 500;
-  font-size: 1.54rem;
+  font-size: 24px;
   color: #3b4056;
-  line-height: 42px;
+  line-height: 37px;
 }
 h1 br {
   display: none;
@@ -87,45 +87,9 @@ h1 br {
 
 h2 {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 20px;
   color: #3b4056;
   margin-bottom: 0rem;
-}
-
-input {
-  padding: 0 0.8rem;
-  height: 41px;
-  border-radius: 8px;
-  border: 1px solid rgba(103, 107, 123, 0.2);
-  outline: none;
-}
-
-textarea {
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 1px solid rgba(103, 107, 123, 0.2);
-  width: 100%;
-  min-width: initial;
-  outline: none;
-  resize: none;
-  height: 199px;
-}
-
-input,
-textarea {
-  transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
-}
-input:focus,
-textarea:focus {
-  border: 1px solid rgba(102, 108, 255, 0.3215686275);
-}
-
-input::-moz-placeholder {
-  opacity: 0;
-}
-
-input::placeholder {
-  opacity: 0;
 }
 
 .card {
@@ -196,6 +160,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 1440px;
 }
 .hero-section .hero-content .text {
   margin-top: 130px;
@@ -207,10 +172,14 @@ main {
   font-weight: 700;
   color: #666cff;
 }
+.hero-section .hero-content .text p {
+  font-size: 15px;
+}
 .hero-section .hero-content .images {
   height: 100%;
   width: 100%;
   position: relative;
+  margin: 0 auto;
 }
 .hero-section .hero-content .images .dashboard {
   height: 100%;
@@ -218,6 +187,8 @@ main {
 }
 .hero-section .hero-content .images .dashboard img {
   width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-section .hero-content .images .element {
   height: 100%;
@@ -418,6 +389,10 @@ main {
 }
 .faqs-section .faqs-content .bottom-container .right .accordion-body {
   text-align: left;
+  border: 1;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-item {
+  border: 0.1px solid rgba(103, 107, 123, 0.2);
 }
 .faqs-section .faqs-content .bottom-container .right .accordion-button {
   background-color: transparent;
@@ -439,6 +414,10 @@ main {
   background-size: cover;
   padding-bottom: 0;
   margin-bottom: -2.5rem;
+}
+.start-section .start-content {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .start-section .start-content .left {
   display: flex;
@@ -535,6 +514,18 @@ main {
 .contact-section .bottom-container .form-container h2 {
   text-align: left;
 }
+.contact-section .bottom-container .form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.contact-section .bottom-container .form-container form .top-input,
+.contact-section .bottom-container .form-container form .middle-input,
+.contact-section .bottom-container .form-container form .bottom-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
 
 footer {
   background-image: url(../../assets/footer/footer_bg_light_and_dark.png);
@@ -556,12 +547,12 @@ footer .footer-content .content a {
   color: #fff;
   font-size: 16px;
 }
-footer .footer-content .content .cta {
+footer .footer-content .content .call-to-action {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-footer .footer-content .content .cta .primary-btn {
+footer .footer-content .content .call-to-action .primary-btn {
   margin-top: auto;
 }
 footer .footer-content .content .nav-links {
@@ -577,7 +568,10 @@ footer .footer-content .content .nav-links a {
 footer .footer-content .content .nav-links a:hover {
   color: #666cff;
   text-decoration-color: #666cff;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out text-decoration-color 0.2s ease-in-out;
+}
+footer .footer-content .content .nav-links a:active {
+  color: #666cff;
 }
 footer .footer-content .content .social-links {
   display: flex;
@@ -593,63 +587,13 @@ footer .footer-content .content .social-links .subscribe p {
   font-size: 15px;
 }
 footer .footer-content .content .social-links .subscribe h2 {
-  font-size: 23px;
+  font-size: 20px;
 }
 footer .footer-content .content .social-links .subscribe form {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-footer .footer-content .content .social-links .subscribe form .input-container {
-  position: relative;
-}
-footer .footer-content .content .social-links .subscribe form .input-container input {
-  background-color: transparent;
-  transition: border cubic-bezier(0.19, 1, 0.22, 1) ease;
-  color: rgba(255, 255, 255, 0.5294117647);
-}
-footer .footer-content .content .social-links .subscribe form .input-container input:focus {
-  border: 1px solid #666cff;
-  background-color: transparent;
-}
-footer .footer-content .content .social-links .subscribe form .input-container label {
-  position: absolute;
-  left: 0.8rem;
-  transform: translateY(40%);
-  color: #3b4056;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  background-color: transparent;
-}
-footer .footer-content .content .social-links .subscribe form .input-container input:not(:-moz-placeholder-shown) + label {
-  transform: translateY(-50%) scale(0.95);
-  background-color: #241d31;
-  color: #666cff;
-  padding: 0 8px;
-}
-footer .footer-content .content .social-links .subscribe form .input-container input:focus + label,
-footer .footer-content .content .social-links .subscribe form .input-container input:not(:placeholder-shown) + label {
-  transform: translateY(-50%) scale(0.95);
-  background-color: #241d31;
-  color: #666cff;
-  padding: 0 8px;
-}
-footer .footer-content .content .social-links .subscribe form .submit-btn {
-  background-color: #5c61e6;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  padding: 0.6rem 1.1rem;
-}
-footer .footer-content .content .social-links .subscribe form .submit-btn:hover {
-  background-color: #3036df;
+  margin-top: 15px;
 }
 footer .footer-content .content .social-links .social-media {
   padding-top: auto;
@@ -744,7 +688,7 @@ footer .footer-content .content .social-links .social-media .social-icons img {
     display: block;
   }
   p {
-    font-size: 0.93rem;
+    font-size: 16px;
   }
   .hero-section .hero-content .text p {
     max-width: 50%;
@@ -774,9 +718,6 @@ footer .footer-content .content .social-links .social-media .social-icons img {
   }
   .contact-section .bottom-container .form-container form > div:nth-child(3) {
     grid-column: 1/3;
-  }
-  .contact-section .bottom-container .form-container form input {
-    max-width: 354px;
   }
 }
 @media (min-width: 1025px) {
@@ -818,5 +759,11 @@ footer .footer-content .content .social-links .social-media .social-icons img {
     flex-direction: row;
     gap: 0rem;
     justify-content: space-between;
+  }
+}
+@media (min-width: 1439px) {
+  .hero-section .hero-content .images img {
+    height: 100%;
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */
