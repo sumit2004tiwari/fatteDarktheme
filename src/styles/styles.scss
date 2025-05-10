@@ -89,16 +89,26 @@ h2 {
 .top-container {
   @include flex-column(1rem);
 }
-
+a {
+  text-decoration: none;
+  width: fit-content;
+}
+a:hover {
+  color: $heading-color;
+  text-decoration-color: $heading-color;
+  transition: color 0.2s ease-in-out text-decoration-color 0.2s ease-in-out;
+}
+a:active {
+  color: $heading-color;
+}
 // Header
 header {
-  @include flex-row(0rem);
+  @include flex-row(1rem);
   justify-content: space-between;
   align-items: center;
-  padding: 0 $padding-mobile;
+  padding: 14px $padding-mobile;
   width: calc(100% - $padding-mobile);
   max-width: 1440px;
-  height: 63px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.78);
@@ -109,9 +119,36 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-
-  nav {
+  nav,
+  .primary-btn {
     display: none;
+  }
+  .left-header {
+    @include flex-row(1rem);
+    align-items: center;
+
+    .hamburger-icon {
+      height: auto;
+      width: fit-content;
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  .right-header {
+    @include flex-row(1.3rem);
+    align-items: center;
+    .access-btn {
+      background-color: $heading-color;
+      padding: 8px 12px;
+      border-radius: 8px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
 
@@ -492,19 +529,6 @@ footer {
       }
       .nav-links {
         @include flex-column(1rem);
-        a {
-          text-decoration: none;
-          width: fit-content;
-          &:hover {
-            color: $heading-color;
-            text-decoration-color: $heading-color;
-            transition: color 0.2s ease-in-out text-decoration-color 0.2s
-              ease-in-out;
-          }
-          &:active {
-            color: $heading-color;
-          }
-        }
       }
       .social-links {
         @include flex-column(2rem);
@@ -548,10 +572,9 @@ footer {
   padding: 0.8rem 0;
   p {
     color: #fff;
-    display: flex;
+    @include flex-row(0.5rem);
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
     .f-logo-img {
       img {
         height: 34px;
@@ -563,6 +586,33 @@ footer {
 }
 
 // Responsive
+
+@media (max-width: 310px) {
+  header {
+    @include flex-column(0.8rem);
+    align-items: flex-start;
+    .right-header {
+      margin-left: auto;
+    }
+  }
+  .faqs-section {
+    .faqs-content {
+      .bottom-container {
+        .left {
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .copy-right {
+    p {
+      @include flex-column(0.8rem);
+    }
+  }
+}
 
 @media (min-width: 610px) {
   .hero-section {
@@ -625,11 +675,7 @@ footer {
   .line-break {
     display: block;
   }
-  header {
-    nav {
-      display: block;
-    }
-  }
+
   .max-width {
     width: calc(100% - $padding-tablet);
     max-width: calc(100% - 12vw);
@@ -643,6 +689,16 @@ footer {
   }
   p {
     font-size: $font-size-base;
+  }
+  header {
+    .right-header {
+      .primary-btn {
+        display: block;
+      }
+      .access-btn {
+        display: none;
+      }
+    }
   }
   .hero-section {
     .hero-content {
@@ -699,12 +755,40 @@ footer {
   }
 }
 
+@media (min-width: 999px) {
+  header {
+    nav,
+    .primary-btn {
+      display: block;
+    }
+    .left-header {
+      @include flex-row(3rem);
+      vertical-align: center;
+      align-items: center;
+      .hamburger-icon {
+        display: none;
+      }
+      nav {
+        .nav-links {
+          @include flex-row(1.5rem);
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          a {
+            color: #3b4056;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 1025px) {
   .max-width {
     width: calc(100% - $padding-desktop);
     margin: 0 auto;
   }
-
+ 
   .advantages-secttion {
     .advantages-content {
       .bottom-container {
