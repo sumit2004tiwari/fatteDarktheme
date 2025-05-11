@@ -21,7 +21,7 @@ body {
 html {
   font-size: clamp(16px, 1vw, 20px);
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 5rem;
 }
 .max-width {
   width: calc(100% - $padding-mobile);
@@ -93,21 +93,14 @@ a {
   text-decoration: none;
   width: fit-content;
 }
-a:hover {
-  color: $heading-color;
-  text-decoration-color: $heading-color;
-  transition: color 0.2s ease-in-out text-decoration-color 0.2s ease-in-out;
-}
-a:active {
-  color: $heading-color;
-}
+
 // Header
 header {
-  @include flex-row(1rem);
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px $padding-mobile;
-  width: calc(100% - $padding-mobile);
+  padding: 14px 1rem;
+  width: calc(100% - 2rem);
   max-width: 1440px;
   margin: 0 auto;
   background-color: #fff;
@@ -119,35 +112,99 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  nav,
-  .primary-btn {
-    display: none;
+  &.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
   }
   .left-header {
-    @include flex-row(1rem);
+    display: flex;
     align-items: center;
+    gap: 1rem;
 
-    .hamburger-icon {
-      height: auto;
-      width: fit-content;
-      img {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
+    .sm-screen-menu {
+      .hamburger-icon {
+        img {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .logo img {
+      height: 30px;
+    }
+
+    nav.sm-nav {
+      position: fixed;
+      top: 0;
+      left: -10%;
+      width: 80%;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      height: 100vh;
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      &.show {
+        transform: translateX(0);
+      }
+      .close-icon {
+        margin-bottom: 40px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+
+        img {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    nav {
+      .nav-links {
+        a {
+          color: #211b2c;
+          &:hover {
+            color: $heading-color;
+          }
+
+          &.active {
+            color: $heading-color;
+            font-weight: 600;
+          }
+        }
       }
     }
   }
+
   .right-header {
-    @include flex-row(1.3rem);
+    display: flex;
     align-items: center;
+    gap: 1.3rem;
+
     .access-btn {
       background-color: $heading-color;
       padding: 8px 12px;
       border-radius: 8px;
+
       img {
         width: 20px;
         height: 20px;
       }
+    }
+
+    .primary-btn {
+      display: none;
     }
   }
 }
@@ -529,6 +586,16 @@ footer {
       }
       .nav-links {
         @include flex-column(1rem);
+        a {
+          &:hover {
+            color: $heading-color;
+          }
+
+          &.active {
+            color: $heading-color;
+            font-weight: 600;
+          }
+        }
       }
       .social-links {
         @include flex-column(2rem);
@@ -757,27 +824,32 @@ footer {
 
 @media (min-width: 999px) {
   header {
-    nav,
-    .primary-btn {
-      display: block;
-    }
     .left-header {
-      @include flex-row(3rem);
-      vertical-align: center;
-      align-items: center;
-      .hamburger-icon {
+      .sm-screen-menu {
         display: none;
       }
-      nav {
-        .nav-links {
-          @include flex-row(1.5rem);
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          a {
-            color: #3b4056;
-          }
+
+      nav.sm-nav {
+        .close-icon {
+          display: none;
         }
+        position: static;
+        transform: none;
+        height: auto;
+        width: auto;
+        box-shadow: none;
+        padding-top: 0;
+        margin-left: 20px;
+        .nav-links {
+          flex-direction: row;
+          gap: 1.5rem;
+        }
+      }
+    }
+
+    .right-header {
+      .primary-btn {
+        display: block;
       }
     }
   }
@@ -788,7 +860,7 @@ footer {
     width: calc(100% - $padding-desktop);
     margin: 0 auto;
   }
- 
+
   .advantages-secttion {
     .advantages-content {
       .bottom-container {
