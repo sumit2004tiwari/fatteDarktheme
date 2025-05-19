@@ -124,7 +124,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 14px 1rem;
-  width: calc(100% - 2rem);
+  width: calc(100% - 1.5rem);
   max-width: 1440px;
   margin: 0 auto;
   background-color: #fff;
@@ -141,77 +141,95 @@ header.scrolled {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
 }
-header .left-header {
+header .header-left {
   display: flex;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 }
-header .left-header .sm-screen-menu .hamburger-icon img {
+header .header-left .menu-toggle .menu-icon img {
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
-header .left-header .logo img {
+header .header-left .site-logo img {
   height: 30px;
 }
-header .left-header nav.sm-nav {
+header .header-left nav.mobile-nav {
   position: fixed;
-  top: 0;
-  left: -10%;
   width: 80%;
+  left: -10%;
+  top: 0;
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   height: 100vh;
 }
-header .left-header nav.sm-nav .nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-header .left-header nav.sm-nav.show {
+header .header-left nav.mobile-nav.show {
   transform: translateX(0);
 }
-header .left-header nav.sm-nav .close-icon {
+header .header-left nav.mobile-nav .menu-close {
   margin-bottom: 40px;
   margin-top: 10px;
   display: flex;
   justify-content: flex-end;
   padding: 1rem;
 }
-header .left-header nav.sm-nav .close-icon img {
+header .header-left nav.mobile-nav .menu-close img {
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
-header .left-header nav .nav-links a {
+header .header-left nav.mobile-nav .nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+header .header-left nav.mobile-nav .nav-menu a {
   color: #211b2c;
 }
-header .left-header nav .nav-links a:hover {
+header .header-left nav.mobile-nav .nav-menu a:hover {
   color: #666cff;
 }
-header .left-header nav .nav-links a.active {
+header .header-left nav.mobile-nav .nav-menu a.active {
   color: #666cff;
   font-weight: 600;
 }
-header .right-header {
+header .header-right {
   display: flex;
   align-items: center;
   gap: 1.3rem;
 }
-header .right-header .access-btn {
+header .header-right .theme-toggle img {
+  width: 20px;
+  height: 20px;
+}
+header .header-right .login-button {
   background-color: #666cff;
   padding: 8px 12px;
   border-radius: 8px;
 }
-header .right-header .access-btn img {
+header .header-right .login-button img {
   width: 20px;
   height: 20px;
 }
-header .right-header .primary-btn {
+header .header-right .cta-button {
   display: none;
+}
+header .header-right .cta-button button {
+  background-color: #666cff;
+  color: #fff;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+header .header-right .cta-button button:hover {
+  background-color: #3036df;
 }
 
 main {
@@ -778,10 +796,10 @@ footer .footer-content .content .social-links .social-media .social-icons img {
   p {
     font-size: 16px;
   }
-  header .right-header .primary-btn {
+  header .header-right .cta-button {
     display: block;
   }
-  header .right-header .access-btn {
+  header .header-right .login-button {
     display: none;
   }
   .hero-section .hero-content .text p {
@@ -815,26 +833,26 @@ footer .footer-content .content .social-links .social-media .social-icons img {
   }
 }
 @media (min-width: 999px) {
-  header .left-header .sm-screen-menu {
+  header .header-left .menu-toggle {
     display: none;
   }
-  header .left-header nav.sm-nav {
+  header .header-left nav.mobile-nav {
     position: static;
     transform: none;
-    height: auto;
     width: auto;
     box-shadow: none;
     padding-top: 0;
     margin-left: 20px;
+    height: auto;
   }
-  header .left-header nav.sm-nav .close-icon {
+  header .header-left nav.mobile-nav .menu-close {
     display: none;
   }
-  header .left-header nav.sm-nav .nav-links {
+  header .header-left nav.mobile-nav .nav-menu {
     flex-direction: row;
     gap: 1.5rem;
   }
-  header .right-header .primary-btn {
+  header .header-right .cta-button {
     display: block;
   }
 }

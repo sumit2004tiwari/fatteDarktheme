@@ -1,9 +1,9 @@
-const hamburgerIcon = document.querySelector(".hamburger-icon");
-const nav = document.querySelector(".sm-nav");
-const navLinks = document.querySelectorAll(".sm-nav .nav-links a");
-const closeIcon = document.querySelector(".sm-nav .close-icon img");
+const hamburgerIcon = document.querySelector(".menu-icon");
+const nav = document.querySelector(".mobile-nav");
+const navLinks = document.querySelectorAll(".mobile-nav .nav-menu a");
+const closeIcon = document.querySelector(".mobile-nav .menu-close img");
 const header = document.querySelector("header");
-const links = document.querySelectorAll(".nav-links a");
+const links = document.querySelectorAll(".nav-menu a");
 
 links.forEach((link) => {
   link.addEventListener("click", function () {
