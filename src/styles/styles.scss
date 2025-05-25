@@ -40,7 +40,7 @@ html {
   margin: 0 auto;
 }
 
-.primary-btn {
+.btn-primary {
   button {
     @include primary-button;
   }
@@ -240,7 +240,7 @@ main {
 }
 
 // Hero Section
-.hero-section {
+.hero {
   @include flex-column(2rem);
   background-image: url(../../assets/hero\ light_first_section/hero-bg-light-1.svg);
   background-position: center;
@@ -250,11 +250,11 @@ main {
   width: 100%;
   text-align: center;
 
-  .hero-content {
+  .hero-wrapper {
     @include flex-column(1rem);
     max-width: 1440px;
 
-    .text {
+    .hero-text {
       margin-top: 130px;
       @include flex-column(1.5rem);
 
@@ -268,12 +268,12 @@ main {
       }
     }
 
-    .images {
+    .hero-images {
       @include full-height-width;
       position: relative;
       margin: 0 auto;
 
-      .dashboard {
+      .dashboard-img {
         @include full-height-width;
 
         img {
@@ -282,7 +282,7 @@ main {
         }
       }
 
-      .element {
+      .decorative-element {
         @include full-height-width;
         position: absolute;
         top: 50%;
@@ -784,7 +784,7 @@ footer {
 }
 
 @media (min-width: 610px) {
-  .hero-section {
+  .hero {
     .bg-img {
       img {
         aspect-ratio: 1/0.8;
@@ -880,9 +880,9 @@ footer {
     }
   }
 
-  .hero-section {
-    .hero-content {
-      .text {
+  .hero {
+    .hero-wrapper {
+      .hero-text {
         p {
           max-width: 50%;
           margin: 0 auto;
@@ -1034,8 +1034,8 @@ footer {
 }
 
 @media (min-width: 1439px) {
-  .hero-section {
-    .hero-content {
+  .hero {
+    .hero-wrapper {
       .images {
         img {
           height: 100%;
