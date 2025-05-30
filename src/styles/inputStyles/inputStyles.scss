@@ -103,14 +103,18 @@ footer {
             input {
               border: 1px solid #f7f7f9;
               color: #fff;
+              &:focus {
+                border-color: $heading-color;
+              }
             }
+
             label {
               color: #f7f7f9;
             }
             input:focus + label,
             input:not(:placeholder-shown) + label {
               background-color: #2a2238;
-              color: #fff;
+              color: $heading-color;
             }
           }
         }

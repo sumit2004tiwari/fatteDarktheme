@@ -72,7 +72,7 @@ h1 {
   font-weight: 500;
   font-size: 24px;
   color: $text-color;
-  line-height: 37px;
+  line-height: 46px;
 
   br {
     display: none;
@@ -107,8 +107,41 @@ h2 {
 }
 
 a {
-  text-decoration: none;
   width: fit-content;
+
+  position: relative;
+  color: #211b2c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1.5px;
+    background-color: $heading-color;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: $heading-color;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &.active {
+    color: $heading-color;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
 }
 
 // Header
@@ -187,19 +220,6 @@ header {
         flex-direction: column;
         gap: 2rem;
         align-items: center;
-
-        a {
-          color: #211b2c;
-
-          &:hover {
-            color: $heading-color;
-          }
-
-          &.active {
-            color: $heading-color;
-            font-weight: 600;
-          }
-        }
       }
     }
   }
@@ -483,7 +503,6 @@ main {
 
       .left {
         @include full-height-width;
-
         img {
           width: 327.45px;
           height: 346.83px;
@@ -491,24 +510,64 @@ main {
       }
 
       .right {
-        .accordion-body {
-          text-align: left;
-          border: 1;
+        .accordion {
+          --bs-accordion-btn-icon-width: 1rem;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
         .accordion-item {
-          border: 0.1px solid $input-border-color;
-        }
+          border: none;
+          .accordion-header {
+            button {
+              font-size: 16px;
+              font-weight: 500;
+              padding: 0.8rem 1rem 0.8rem 1rem;
+              margin: 0;
+              line-height: 1.5;
+              border-top: 1px solid #e0e0e0;
 
+              &:focus,
+              &:focus-visible,
+              &:active {
+                background-color: transparent;
+                box-shadow: none;
+                outline: none;
+                border-bottom: none;
+              }
+
+              &.collapsed {
+                border-bottom: none;
+              }
+            }
+          }
+          &:first-child {
+            .accordion-header button {
+              border-top: none;
+              padding-top: 0.8rem;
+            }
+          }
+        }
         .accordion-button {
           background-color: transparent;
           color: $text-color;
           font-size: $font-size-label;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
 
-          &:focus {
-            background-color: transparent;
+          &:focus,
+          &:focus-visible,
+          &:active {
             box-shadow: none;
+            border: none;
+            outline: none;
           }
+        }
+        .accordion-body {
+          text-align: left;
+          opacity: 0.8;
+          padding-top: 0.2rem;
         }
       }
     }
@@ -653,7 +712,6 @@ footer {
       @include flex-column(2.5rem);
       text-align: left;
       padding: 4rem 0;
-
       p,
       h2,
       h3,
@@ -661,7 +719,6 @@ footer {
         color: #fff;
         font-size: $font-size-base;
       }
-
       .call-to-action {
         @include flex-column(2rem);
 
@@ -669,22 +726,20 @@ footer {
           margin-top: auto;
         }
       }
-
       .nav-links {
         @include flex-column(1rem);
 
         a {
+          font-size: 16px;
           &:hover {
             color: $heading-color;
           }
 
           &.active {
             color: $heading-color;
-            font-weight: 600;
           }
         }
       }
-
       .social-links {
         @include flex-column(2rem);
 
@@ -1007,7 +1062,15 @@ footer {
       }
     }
   }
-
+  .faqs-section {
+    .faqs-content {
+      .bottom-container {
+        .left {
+          max-width: 40%;
+        }
+      }
+    }
+  }
   .contact-section {
     .bottom-container {
       @include flex-row(2rem);

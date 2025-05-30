@@ -79,7 +79,7 @@ h1 {
   font-weight: 500;
   font-size: 24px;
   color: #3b4056;
-  line-height: 37px;
+  line-height: 46px;
 }
 h1 br {
   display: none;
@@ -114,9 +114,36 @@ h2 {
 }
 
 a {
-  text-decoration: none;
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
+  color: #211b2c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background-color: #666cff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+a:hover {
+  color: #666cff;
+}
+a:hover::after {
+  transform: scaleX(1);
+}
+a.active {
+  color: #666cff;
+}
+a.active::after {
+  transform: scaleX(1);
 }
 
 header {
@@ -185,16 +212,6 @@ header .header-left nav.mobile-nav .nav-menu {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-}
-header .header-left nav.mobile-nav .nav-menu a {
-  color: #211b2c;
-}
-header .header-left nav.mobile-nav .nav-menu a:hover {
-  color: #666cff;
-}
-header .header-left nav.mobile-nav .nav-menu a.active {
-  color: #666cff;
-  font-weight: 600;
 }
 header .header-right {
   display: flex;
@@ -481,21 +498,53 @@ main {
   width: 327.45px;
   height: 346.83px;
 }
-.faqs-section .faqs-content .bottom-container .right .accordion-body {
-  text-align: left;
-  border: 1;
+.faqs-section .faqs-content .bottom-container .right .accordion {
+  --bs-accordion-btn-icon-width: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .faqs-section .faqs-content .bottom-container .right .accordion-item {
-  border: 0.1px solid rgba(103, 107, 123, 0.2);
+  border: none;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-item .accordion-header button {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  margin: 0;
+  line-height: 1.5;
+  border-top: 1px solid #e0e0e0;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-item .accordion-header button:focus, .faqs-section .faqs-content .bottom-container .right .accordion-item .accordion-header button:focus-visible, .faqs-section .faqs-content .bottom-container .right .accordion-item .accordion-header button:active {
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  border-bottom: none;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-item .accordion-header button.collapsed {
+  border-bottom: none;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-item:first-child .accordion-header button {
+  border-top: none;
+  padding-top: 0.8rem;
 }
 .faqs-section .faqs-content .bottom-container .right .accordion-button {
   background-color: transparent;
   color: #3b4056;
   font-size: 15px;
-}
-.faqs-section .faqs-content .bottom-container .right .accordion-button:focus {
-  background-color: transparent;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-button:focus, .faqs-section .faqs-content .bottom-container .right .accordion-button:focus-visible, .faqs-section .faqs-content .bottom-container .right .accordion-button:active {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.faqs-section .faqs-content .bottom-container .right .accordion-body {
+  text-align: left;
+  opacity: 0.8;
+  padding-top: 0.2rem;
 }
 
 .start-section {
@@ -654,12 +703,14 @@ footer .footer-content .content .nav-links {
   flex-direction: column;
   gap: 1rem;
 }
+footer .footer-content .content .nav-links a {
+  font-size: 16px;
+}
 footer .footer-content .content .nav-links a:hover {
   color: #666cff;
 }
 footer .footer-content .content .nav-links a.active {
   color: #666cff;
-  font-weight: 600;
 }
 footer .footer-content .content .social-links {
   display: flex;
@@ -877,6 +928,9 @@ footer .footer-content .content .social-links .social-media .social-icons img {
   }
   .start-section .start-content .left {
     text-align: left;
+  }
+  .faqs-section .faqs-content .bottom-container .left {
+    max-width: 40%;
   }
   .contact-section .bottom-container {
     display: flex;

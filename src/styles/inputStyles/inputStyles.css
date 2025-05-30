@@ -94,15 +94,18 @@ footer .footer-content .social-links .subscribe form .input-container input {
   border: 1px solid #f7f7f9;
   color: #fff;
 }
+footer .footer-content .social-links .subscribe form .input-container input:focus {
+  border-color: #666cff;
+}
 footer .footer-content .social-links .subscribe form .input-container label {
   color: #f7f7f9;
 }
 footer .footer-content .social-links .subscribe form .input-container input:not(:-moz-placeholder-shown) + label {
   background-color: #2a2238;
-  color: #fff;
+  color: #666cff;
 }
 footer .footer-content .social-links .subscribe form .input-container input:focus + label,
 footer .footer-content .social-links .subscribe form .input-container input:not(:placeholder-shown) + label {
   background-color: #2a2238;
-  color: #fff;
+  color: #666cff;
 }/*# sourceMappingURL=inputStyles.css.map */
