@@ -3,12 +3,18 @@ const nav = document.querySelector(".mobile-nav");
 const navLinks = document.querySelectorAll(".mobile-nav .nav-menu a");
 const closeIcon = document.querySelector(".mobile-nav .menu-close img");
 const header = document.querySelector("header");
-const links = document.querySelectorAll(".nav-menu a");
+const allNavLinks = document.querySelectorAll('a[href^="#"]');
 
-links.forEach((link) => {
+allNavLinks.forEach((link) => {
   link.addEventListener("click", function () {
-    links.forEach((el) => el.classList.remove("active"));
-    this.classList.add("active");
+    const href = this.getAttribute("href");
+    allNavLinks.forEach((el) => {
+      if (el.getAttribute("href") === href) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
+      }
+    });
   });
 });
 
