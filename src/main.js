@@ -4,6 +4,8 @@ const navLinks = document.querySelectorAll(".mobile-nav .nav-menu a");
 const closeIcon = document.querySelector(".mobile-nav .menu-close img");
 const header = document.querySelector("header");
 const allNavLinks = document.querySelectorAll('a[href^="#"]');
+const allSections = document.querySelectorAll("section");
+let currentActiveId = null;
 
 allNavLinks.forEach((link) => {
   link.addEventListener("click", function () {
@@ -38,4 +40,35 @@ navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("show");
   });
+});
+
+window.addEventListener("scroll", () => {
+  let newActiveId = null;
+
+  allSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    if (
+      rect.top <= viewportHeight * 0.55 &&
+      rect.bottom >= viewportHeight * 0.45
+    ) {
+      newActiveId = section.getAttribute("id");
+    }
+  });
+
+  if (newActiveId && newActiveId !== currentActiveId) {
+    currentActiveId = newActiveId;
+
+    allNavLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href === `#${currentActiveId}`) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    history.replaceState(null, "", `#${currentActiveId}`);
+  }
 });

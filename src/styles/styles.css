@@ -543,8 +543,8 @@ main {
 }
 .faqs-section .faqs-content .bottom-container .right .accordion-body {
   text-align: left;
-  opacity: 0.8;
-  padding-top: 0.2rem;
+  opacity: 0.7;
+  padding: 0.1rem 0rem 1rem 1rem;
 }
 
 .start-section {
