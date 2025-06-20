@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+   background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 html,
@@ -16,7 +18,9 @@ body {
   font-weight: 400;
   font-style: normal;
   line-height: 1.2;
-  background-color: #fff;
+  // background-color: #fff;
+   background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 html {
@@ -88,6 +92,7 @@ h2 {
 
 .card {
   --bs-card-border-width: 0px;
+  
 }
 
 .card-icon {
@@ -110,7 +115,7 @@ a {
   width: fit-content;
 
   position: relative;
-  color: #211b2c;
+ color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
 
@@ -162,6 +167,8 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+   background-color: var(--bg-color);
+  color: var(--text-color);
 
   &.scrolled {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -269,6 +276,8 @@ main {
   position: relative;
   width: 100%;
   text-align: center;
+   background-color: var(--bg-color);
+  color: var(--text-color);
 
   .hero-wrapper {
     @include flex-column(1rem);
@@ -795,7 +804,8 @@ footer {
 }
 
 .copy-right {
-  background-color: #211b2c;
+   background-color: var(--bg-color);
+  color: var(--text-color);
   text-align: center;
   padding: 0.8rem 0;
 

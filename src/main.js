@@ -5,6 +5,9 @@ const closeIcon = document.querySelector(".mobile-nav .menu-close img");
 const header = document.querySelector("header");
 const allNavLinks = document.querySelectorAll('a[href^="#"]');
 const allSections = document.querySelectorAll("section");
+const themeToggle = document.querySelector(".theme-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
 let currentActiveId = null;
 
 allNavLinks.forEach((link) => {
@@ -71,4 +74,33 @@ window.addEventListener("scroll", () => {
 
     history.replaceState(null, "", `#${currentActiveId}`);
   }
+});
+
+function setTheme(theme) {
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("light");
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+  }
+  localStorage.setItem("theme", theme);
+}
+
+function getInitialTheme() {
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme === "light" || storedTheme === "dark") {
+    return storedTheme;
+  }
+  return prefersDarkScheme.matches ? "dark" : "light";
+}
+
+// Set initial theme on page load
+setTheme(getInitialTheme());
+
+// Toggle theme on icon click
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  setTheme(newTheme);
 });
