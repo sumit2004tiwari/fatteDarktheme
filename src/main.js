@@ -6,10 +6,33 @@ const header = document.querySelector("header");
 const allNavLinks = document.querySelectorAll('a[href^="#"]');
 const allSections = document.querySelectorAll("section");
 const themeToggle = document.querySelector(".theme-toggle");
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
+const container = document.getElementById("cardItems");
+const cards = Array.from(container.children);
+
+// Clone cards for infinite loop effect
+cards.forEach(card => {
+  const clone = card.cloneNode(true);
+  container.appendChild(clone);
+});
+
+// Scroll automatically
+let scrollSpeed = 1;
+function autoScroll() {
+  container.scrollLeft += scrollSpeed;
+
+  // Reset to start for infinite effect
+  if (container.scrollLeft >= container.scrollWidth / 2) {
+    container.scrollLeft = 0;
+  }
+}
+setInterval(autoScroll, 16);
+
+
+
+
+  
 let currentActiveId = null;
-
 allNavLinks.forEach((link) => {
   link.addEventListener("click", function () {
     const href = this.getAttribute("href");

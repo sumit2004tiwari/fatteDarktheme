@@ -35,7 +35,7 @@ body {
   line-height: 1.2;
   /* background-color: rgba(var(--bg-color), 1); */
   color: var(--text-color);
-  /* background-color: #fff; */
+  background-color: #fff;
 }
 
 html {
@@ -57,11 +57,12 @@ html {
 
 .dark .main-body {
   margin: 0 auto;
-  background-color: #30334E;
+  /* background-color: #30334E; */
 }
 
 .main-body {
   margin: 0 auto;
+  background-color: white;
 }
 
 .btn-primary button {
@@ -460,6 +461,7 @@ main {
   backdrop-filter: blur(2px);
   box-shadow: 4px 4px 2px 0px rgba(211, 211, 211, 0.2509803922);
 }
+
 
 .management-section .management-content {
   display: flex;
@@ -1281,3 +1283,50 @@ footer
     width: 100%;
   }
 } /*# sourceMappingURL=styles.css.map */
+
+
+
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #f4f4f4;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  width: fit-content;
+  animation: scrollLoop 30s linear infinite;
+}
+
+.card-items {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.card {
+  flex: 0 0 250px;
+  gap: 290px;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  min-height: 200px;
+  transition: all 0.5s ease;
+  opacity: 1;
+ 
+  transform: scale(0.9);
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
