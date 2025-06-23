@@ -57,6 +57,7 @@ html {
 
 .main-body {
   margin: 0 auto;
+  background-color: #30334E;
 }
 
 .btn-primary button {
@@ -286,6 +287,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  background-color: #30334E;
 }
 
 .dark .hero {
@@ -541,6 +543,16 @@ main {
   font-weight: 400;
 }
 
+
+.dark .faqs-section {
+  /* background-color: #f7f7f9; */
+  padding: 4rem 0;
+  margin-bottom: -2.5rem;
+  background-color: #282a42;
+  opacity: 1;
+  color: var(--text-color);
+}
+
 .faqs-section {
   /* background-color: #f7f7f9; */
 
@@ -549,6 +561,7 @@ main {
   background-color: rgba(var(--bg-color), 1);
   color: var(--text-color);
 }
+
 .faqs-section .faqs-content {
   display: flex;
   flex-direction: column;
@@ -613,7 +626,7 @@ main {
   .accordion-item
   .accordion-header
   button:active {
-  background-color: transparent;
+  /* background-color: transparent; */
   box-shadow: none;
   outline: none;
   border-bottom: none;
@@ -637,6 +650,8 @@ main {
   border-top: none;
   padding-top: 0.8rem;
 }
+
+
 .faqs-section .faqs-content .bottom-container .right .accordion-button {
   background-color: transparent;
   /* color: #3b4056; */
@@ -660,6 +675,15 @@ main {
   border: none;
   outline: none;
 }
+
+.dark .faqs-section .faqs-content .bottom-container .right .accordion-body {
+  text-align: left;
+  opacity: 0.7;
+  padding: 0.1rem 0rem 1rem 1rem;
+  background-color: #282a42;
+  color: #fff;
+}
+
 .faqs-section .faqs-content .bottom-container .right .accordion-body {
   text-align: left;
   opacity: 0.7;
