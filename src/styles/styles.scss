@@ -369,6 +369,7 @@ main {
         scroll-padding: 0 50%;
 
         .card {
+          // commnet
           flex-shrink: 0;
           scroll-snap-align: center;
           @include flex-column(2.5rem);
