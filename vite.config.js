@@ -4,5 +4,5 @@ export default {
   build: {
     outDir: "dist",
   },
-   "predeploy": "npm run build",
+   
 };
