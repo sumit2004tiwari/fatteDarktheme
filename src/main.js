@@ -8,25 +8,50 @@ const allSections = document.querySelectorAll("section");
 const themeToggle = document.querySelector(".theme-toggle");
 
 const container = document.getElementById("cardItems");
-const cards = Array.from(container.children);
+let cards = Array.from(container.children);
 
-// Clone cards for infinite loop effect
+// STEP 1: Clone all cards once for infinite loop illusion
 cards.forEach(card => {
   const clone = card.cloneNode(true);
   container.appendChild(clone);
 });
 
-// Scroll automatically
-let scrollSpeed = 1;
-function autoScroll() {
-  container.scrollLeft += scrollSpeed;
+cards = Array.from(container.children); // update list with clones
 
-  // Reset to start for infinite effect
-  if (container.scrollLeft >= container.scrollWidth / 2) {
-    container.scrollLeft = 0;
+let currentIndex = 0;
+const cardWidth = cards[0].offsetWidth + 20; // width + gap (adjust if needed)
+
+function highlightCard(index) {
+  cards.forEach((card, i) => {
+    card.classList.remove("active");
+  });
+
+  const realIndex = index % (cards.length / 2); // only apply zoom to original cards
+  cards[realIndex].classList.add("active");
+
+  container.scrollTo({
+    left: index * cardWidth,
+    behavior: "smooth"
+  });
+
+  // RESET SCROLL after full loop to prevent overflow
+  if (index >= cards.length / 2) {
+    setTimeout(() => {
+      container.scrollTo({ left: 0, behavior: "auto" });
+    }, 400); // let the last scroll finish before jumping
+    currentIndex = 0;
   }
 }
-setInterval(autoScroll, 16);
+
+highlightCard(currentIndex);
+
+setInterval(() => {
+  currentIndex++;
+  highlightCard(currentIndex);
+}, 1000);
+
+
+
 
 
 
@@ -127,3 +152,7 @@ themeToggle.addEventListener("click", () => {
   const newTheme = currentTheme === "dark" ? "light" : "dark";
   setTheme(newTheme);
 });
+
+// resume crausel 
+ const resume = document.querySelector('.resume');
+ const resumeItems = document.querySelectorAll('.resume-item'); 
